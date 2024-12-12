@@ -426,3 +426,57 @@ w_j = u_j - v_j \quad |w_j| = u_j + v_j.
 \end{align*}
 
 Это условие на $\lambda,$ при котором задача имеет решение $w_0 = 0,$ поэтому нам подходит $\lambda \in [0;$ $|xb|)$.
+
+\section{Обобщения линейного SVM. Ядра и спрямляющие пространства. SVM как двухслойная нейронная сеть.}
+\subsection*{Нелинейное обобщение SVM}
+\textbf{Определение}. Функция $K: X \rightarrow X$ - ядро, если $K(x, \tilde{x}) = \langle \psi, \tilde{\psi} \rangle $ при некотором $\psi: X \rightarrow H$, где $H$ - гильбертово пространство
+
+\noindent\textbf{Теорема}. Функция $K(x, \tilde{x})$ является ядром тогда и только тогда, когда
+она симметрична: $K(x, \tilde{x}) = K(\tilde{x}, x)$ и неотрицательно определена:
+$ \iint\limits_{XX} K(x, \tilde{x})g(x)g(\tilde{x}) dxdy \ge 0$ для любой $g: X \rightarrow \mathbb{R}$
+
+\noindent\textbf{Конструктивные методы синтеза ядер:}
+\begin{itemize}
+  \item $K(x, \tilde{x}) = \text{\textlangle} x, \tilde{x} \text{\textrangle} ~$ - ядро
+  \item $K(x, \tilde{x}) = 1$ - ядро
+  \item $K(x, \tilde{x}) = K_1(x, \tilde{x}) \times K_2(x, \tilde{x})$ - ядро, если $K_1, K_2$ - ядра
+  \item $K(x, \tilde{x}) = \psi(x)\psi(\tilde{x})$ - ядро при $\psi: X \rightarrow \mathbb{R}$
+  \item $K(x, \tilde{x}) = \alpha_1 K_1(x, \tilde{x}) + \alpha_2 K_2(x, \tilde{x}), ~ \alpha_1 > 0, \alpha_2 > 0$
+  \item $K(x ,\tilde{x}) = \iint\limits_{X} s(x, z) s(\tilde{x}, z) dz$ - ядро, если $s: X \times X \rightarrow \mathbb{R}$ - симметричная интегрируемая функция
+  \item $K(x, \tilde{x}) = f(K_0(x, \tilde{x}))$ - ядро, если $K_0$ - ядро и $f: \mathbb{R} \rightarrow \mathbb{R}$ представима в виде сходящегося степенного ряда с неотрицательными коэффицентами 
+\end{itemize}
+
+\subsection{Задача 1}
+Найти пространство $H$ и преобразование $\psi: X \rightarrow H$, при которых 
+$K(x, \tilde{x}) = \langle \psi(x),\psi(\tilde{x}) \rangle $, где $X = \mathbb{R}^2,~
+K(u, v) = \langle u, v \rangle^2,~ u = (u_1, u_2),~ v = (v_1, v_2)$
+\subsection{Решение}
+\begin{align*}
+  K(u, v) = \langle u, v \rangle^2 = \langle (u_1, u_2), (v_1, v_2) \rangle^2 = (u_1v_1 + u_2v_2)^2 = u_1^2 u_2^2 + 2u_1v_1u_2v_2 = \\
+  = \langle(u_1^2, u_2^2, \sqrt{2}u_1u_2),(v_1^2, v_2^2, \sqrt{2}v_1v_2)\rangle 
+\end{align*}
+То есть $ H = \mathbb{R}^3, ~ \psi: (u_1, u_2) \rightarrow (u_1^2, u_2^2, \sqrt{2}u_1u_2)$
+
+\subsection{Задача 2}
+Решите предыдущую задачу при условии, что $X = \mathbb{R}^n, ~ K(u, v) = \langle u, v \rangle^{d}$
+\subsection{Решение}
+Заметим, что в таком случае компонентами вектора $\psi(u)$ будут различные произведения $(u_1)^{d_1}, (u_2)^{d_2}, ..., (u_n)^{d_n}~$ при
+$d_1, d_2, ..., d_n: d_1 \ge 0, d_2 \ge 0, ..., d_n \ge 0$ и $ d_1 + d_2 + ... + d_n = d$. Число мономов и есть размерность пространства $H$: $dim H = C_{n + d - 1} ^ d$ - число сочетаний с повторением.
+
+\subsection{Задача 3}
+Представьте нелинейное обобщение SVM для классификатора в виде двухслойной нейронной сети. Считать,
+что опорные объекты из множества $ X = \mathbb{R}^n~$
+\subsection{Решение}
+Обозначим $x_1, x_2, ..., x_h$ как опорные объекты. Тогда
+\begin{align}
+  a(x) = sign(\sum_{i = 1}^{h} \lambda_i y_i K(x, \tilde{x}) - w_0)
+\end{align}
+
+\noindent Двухслойная нейронная сеть представлена на рисунке ниже.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\linewidth]{chapters/svm/images/SVM_neuron.png}
+  \caption{SVM в виде двухслойной нейросети}
+  \label{fig:mpr}
+\end{figure}
