@@ -5,6 +5,7 @@
 
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{csquotes}
 \usepackage{wrapfig}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -18,12 +19,18 @@
 \usepackage{pgfplots}
 \usepackage{tcolorbox}
 \usepackage[dvipsnames]{xcolor}
-\usepackage{titlesec}
 \usepackage{multirow}
 \usepackage{lastpage}
 \usepackage{systeme}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{algpseudocode}
+
 
 \theoremstyle{definition}
 \newtheorem*{definition}{Определение}
@@ -36,20 +43,12 @@
 \theoremstyle{remark}
 \newtheorem*{solution}{Решение}
 
-\newcommand{\abs}[1]{\left|#1\right|}
-
-\usepackage[toc,page]{appendix}
-\usepackage{hyperref}
-\usepackage{geometry}
-\usepackage{mathrsfs}
-\usepackage{enumerate}
-\usepackage{algpseudocode}
-
 \geometry{left=1.5cm}
 \geometry{right=1.5cm}
 \geometry{top=2.0cm}
 \geometry{bottom=3.0cm}
 \renewcommand{\baselinestretch}{1.0}
+\newcommand{\abs}[1]{\left|#1\right|}
 
 %https://tex.stackexchange.com/questions/163451/total-number-of-citations
 \usepackage{totcount}
@@ -95,7 +94,7 @@ sorting=ynt
 \addbibresource{chapters/boosting/main.bib}
 \addbibresource{chapters/bayesian/main.bib}
 \addbibresource{chapters/clustering/main.bib}
-\addbibresource{chapters/unlabeled/main.bib}
+\addbibresource{chapters/unmarked/main.bib}
 
 \begin{document}
 % Титульный лист
@@ -177,10 +176,9 @@ sorting=ynt
 
     \clearpage
     \chapter{Обучение на неразмеченных данных}
-    \input{chapters/unlabeled/main}
+    \input{chapters/unmarked/main}
 
     % Bibliography
     \clearpage
     \printbibliography
 \end{document}
-

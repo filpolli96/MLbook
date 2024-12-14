@@ -163,7 +163,7 @@
     \centering
     \includegraphics[width=0.9\linewidth]{chapters/clustering/png/An-Example-Illustrating-the-Density-Based-DBSCAN-Clustering-Method-Applied-to-SMLM-Data.png}
     \caption{An Example Illustrating the Density-Based DBSCAN Clustering Method Applied to SMLM Data}
-    \label{fig:enter-label}
+    \label{fig:enter-label-2}
 \end{figure}
 Возникает 2 параметра: $\varepsilon$ и $m$. Других параметров не будет. От этих параметров и будет зависеть то, какой картина кластеризации получится. Также к преимуществам этого метода относится то, что он не задает заранее количество кластеров, в отличие, например, от k-means, причём количество кластеров будет зависеть от $\varepsilon$ и $m$. 
 
@@ -185,7 +185,7 @@
 \hspace*{7mm}\hspace*{7mm}\hspace*{7mm} \textbf{если} $\abs{U_\varepsilon (x')} \geq m$,  \textbf{то} $K := K \cup U_\varepsilon (x')$; \\
 \hspace*{7mm}\hspace*{7mm}\hspace*{7mm} \textbf{иначе} поментить $x'$ как граничный кластера $K$;\\
 \hspace*{7mm}\hspace*{7mm} $a_j := a$ для всех $x_i \in K$;\\
-\hspace*{7mm}\hspace*{7mm} $U := U \textbackslash K$;\\
+\hspace*{7mm}\hspace*{7mm} $U := U \backslash K$;\\
 \vspace{5mm}
 \end{tabularx}
 
@@ -199,9 +199,9 @@
 При этом важно понимать, что граничные объекты не выстраивают в точности границу каждого кластера. Практически это означает, что не стоит всерьез рассматривать граничные объекты, в отличие от шумовых, которые действительно можно в дальнейшем анализировать.
 
 \subsection{Примечание о HDBSCAN} 
-От гиперпараметра $\varepsilon$ можно избавиться, используя дивизивную кластеризацию. Такая модификация называется HDBSCAN. Его суть проста: необходимо построить дендрограмму, где по $Оу$ будет отложен $\varepsilon$ (на рис.\ref{fig:hdbdendro} снизу distance). Так мы сможем явно видеть вложенные кластеры. Алгоритм затем сам вычисляет оптимальное количество кластеров на основе метрики "стабильности кластеров".
+От гиперпараметра $\varepsilon$ можно избавиться, используя дивизивную кластеризацию. Такая модификация называется HDBSCAN. Его суть проста: необходимо построить дендрограмму, где по $Oy$ будет отложен $\varepsilon$ (на рис.\ref{fig:hdbdendro} снизу distance). Так мы сможем явно видеть вложенные кластеры. Алгоритм затем сам вычисляет оптимальное количество кластеров на основе метрики "стабильности кластеров".
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=0.6\linewidth]{chapters/clustering/png/hdbscan_dendrogramm.png}
     \caption{К примечанию о HDBSCAN}
@@ -309,7 +309,7 @@ P12& 2.83 & 3.16 & 4.00 & 5.10 & 4.47 & 5.39 & 6.00 & 1.41 & 2.00 & 2.00 & 1.41 
 \end{center}
 
 К первому кластеру отнесем окрестность корневой точки 2, причем в ее окрестности находится еще одна корневая точка 11, так что отнесем и ее окрестность к первому кластеру. Ко второму кластеру отнесем корневую точку 5 и ее окрестность. Осталась лишь одна точка P9, которая не относится ни к какому кластеру и является шумовой.
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=0.7\linewidth]{chapters/clustering/png/task1dbs_plot.png}
     \caption{Кластеризация в задаче 1}

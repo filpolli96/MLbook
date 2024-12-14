@@ -96,7 +96,7 @@
       <file>chapters/boosting/main.bib</file>
       <file>chapters/bayesian/main.bib</file>
       <file>chapters/clustering/main.bib</file>
-      <file>chapters/unlabeled/main.bib</file>
+      <file>chapters/unmarked/main.bib</file>
     </requires>
   </external>
 </requests>
