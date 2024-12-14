@@ -13,7 +13,7 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{chapters/metric/images/fp-tree-example.png}
+    \includegraphics[width=0.8\linewidth]{chapters/rules/images/fp-tree-example.png}
     \caption{Пример FP-дерева}
 \end{figure}
 
@@ -28,7 +28,7 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1\linewidth]{chapters/metric/images/fp-tree-stages-example.png}
+    \includegraphics[width=1\linewidth]{chapters/rules/images/fp-tree-stages-example.png}
     \caption{Иллюстрация этапов построения FP-дерева}
     \label{fig:enter-label}
 \end{figure}
@@ -313,7 +313,7 @@ G_3 = \{\{A, B, C\}, \{A, C, E\}, \{B, C, E\}\}.
 
 В начале мы должны найти все частые k-грамм и алгоритм быстрого поиска приведён на рисунке 1.
 \begin{figure}
-    \includegraphics[scale = 0.5]{images/ml1.png}
+    \includegraphics[scale = 0.5]{chapters/rules/images/ml1.png}
     \caption{Алгоритм быстрого поиска}
 \end{figure}
 где $C(a_{1},...,a_{k})$ - хэш-таблица частот k-грамм, $a_{i} \in W$, $C(w) = n_{w}$ для всех униграмм $w \in W: n_{w} \geq \varepsilon_{1}$, где $W$ - множество слов или фраз.
@@ -328,7 +328,7 @@ $SignificanceScore = \frac{p_{uv}-p_{u}p_{v}}{\sqrt{p_{uv}}}$
 
 В начале у нас есть кортеж исходных фраз и первой итерацией считается \textit{SignificanceScore} для всех соседних пар фраз. И затем из кортежа удаляются все все пары с \textit{SignificanceScore} больше $\alpha$. Оставшиеся элементы в кортеже и являются термами. На рисунке 2 приведен пример работы алгоритма TopMine.
 \begin{figure}
-    \includegraphics[scale = 0.5]{images/ml2.png}
+    \includegraphics[scale = 0.5]{chapters/rules/images/ml2.png}
     \caption{Пример работы алгоритма TopMine}
 \end{figure}
 \subsection*{Синтаксический анализ: UDPipe}
@@ -381,7 +381,7 @@ $$\frac{p_{ab}-p_{a}p_{b}}{\sqrt{p_{ab}}} \approx 0,01 < \alpha$$
  \textbf{Задача 2.} Дано синтактическое дерево (рис. 3) для предложения "An inventory of syntactic functions is taken to be primitive". Найдите \textit{SyntaxScore} для фразы "syntactic functions is".
  
 \begin{figure}
-    \includegraphics[scale = 0.4]{images/ml3.png}
+    \includegraphics[scale = 0.4]{chapters/rules/images/ml3.png}
     \caption{Задача 2}
 \end{figure}
 

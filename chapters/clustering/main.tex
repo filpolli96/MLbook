@@ -153,6 +153,8 @@
 
 \textbf{Определение 1.} Задан объект $x \in U$, его $\varepsilon$-окрестность $U_\varepsilon (x) = \{\;u\in U:\; \rho (x,u) \leq \varepsilon \;\}$ - это множество объектов, которые находятся на расстоянии не больше $\varepsilon$ от заданного объекта $x$.
 
+\newcommand{\abs}[1]{\left|#1\right|}
+
 Тогда каждый объект может быть отнесен к одному из трёх типов:
 \begin{itemize}
     \item \textit{корневой}: имеющий плотную окрестность,  {$\abs{U_\varepsilon (x)} \geq m$}, т.е. $\varepsilon$ содержит $\geq m$ объектов.
@@ -161,7 +163,7 @@
 \end{itemize}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\linewidth]{png/An-Example-Illustrating-the-Density-Based-DBSCAN-Clustering-Method-Applied-to-SMLM-Data.png}
+    \includegraphics[width=0.9\linewidth]{chapters/clustering/png/An-Example-Illustrating-the-Density-Based-DBSCAN-Clustering-Method-Applied-to-SMLM-Data.png}
     \caption{An Example Illustrating the Density-Based DBSCAN Clustering Method Applied to SMLM Data}
     \label{fig:enter-label}
 \end{figure}
@@ -203,7 +205,7 @@
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\linewidth]{png/hdbscan_dendrogramm.png}
+    \includegraphics[width=0.6\linewidth]{chapters/clustering/png/hdbscan_dendrogramm.png}
     \caption{К примечанию о HDBSCAN}
     \label{fig:hdbdendro}
 \end{figure}
@@ -311,7 +313,7 @@ P12& 2.83 & 3.16 & 4.00 & 5.10 & 4.47 & 5.39 & 6.00 & 1.41 & 2.00 & 2.00 & 1.41 
 К первому кластеру отнесем окрестность корневой точки 2, причем в ее окрестности находится еще одна корневая точка 11, так что отнесем и ее окрестность к первому кластеру. Ко второму кластеру отнесем корневую точку 5 и ее окрестность. Осталась лишь одна точка P9, которая не относится ни к какому кластеру и является шумовой.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\linewidth]{png/task1dbs_plot.png}
+    \includegraphics[width=0.7\linewidth]{chapters/clustering/png/task1dbs_plot.png}
     \caption{Кластеризация в задаче 1}
     \label{fig:task1dbs}
 \end{figure}
@@ -332,7 +334,7 @@ DBSCAN: может идентифицировать и маркировать т
 \end{itemize}
 \end{minipage}% This must go next to `\end{minipage}`
 \begin{minipage}{.4\textwidth}
-      \includegraphics[width=0.95\linewidth]{png/task2dbs_plot.png}
+      \includegraphics[width=0.95\linewidth]{chapters/clustering/png/task2dbs_plot.png}
 \end{minipage}
 \begin{itemize}
 \item \textit{Плотность кластера}:
