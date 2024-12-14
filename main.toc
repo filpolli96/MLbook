@@ -1,0 +1,282 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 1. Общие термины и обозначения}{10}{chapter.1}%
+\contentsline {section}{\numberline {1.1.}Линейные модели классификации и регрессии}{14}{section.1.1}%
+\contentsline {section}{\numberline {1.2.}Метод наименьших квадратов}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.3.}Скользящий контроль}{16}{section.1.3}%
+\contentsline {section}{\numberline {1.4.}Определения и обозначения}{16}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1.}Процедура скользящего контроля}{17}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2.}Доверительное оценивание}{17}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3.}Стратификация}{18}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5.}Разновидности скользящего контроля}{19}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1.}Полный скользящий контроль (complete CV)}{19}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2.}Случайные разбиения}{19}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3.}Контроль на отложенных данных (hold-out CV)}{20}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4.}Контроль по отдельным объектам (leave-one-out CV)}{20}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5.}Контроль по \( q \) блокам (q-fold CV)}{21}{subsection.1.5.5}%
+\contentsline {subsection}{\numberline {1.5.6.}Контроль по r×q блокам (r×q-fold CV)}{21}{subsection.1.5.6}%
+\contentsline {section}{\numberline {1.6.}Скользящий контроль в задачах прогнозирования}{21}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1.}Контроль с нарастающей длиной обучения}{22}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2.}Контроль с фиксированной длиной обучения}{22}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7.}Недостатки скользящего контроля}{22}{section.1.7}%
+\contentsline {section}{\numberline {1.8.}Применение скользящего контроля}{23}{section.1.8}%
+\contentsline {section}{\numberline {1.9.}Вероятность переобучения}{32}{section.1.9}%
+\contentsline {section}{\numberline {1.10.}Статистические критерии в машинном обучении}{38}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1.}Теория}{38}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2.}Задачи}{39}{subsection.1.10.2}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 2. Линейные методы классификации и регрессии}{40}{chapter.2}%
+\contentsline {section}{\numberline {2.1.}О регуляризации}{40}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1.}Гауссовский и лапласовский регуляризаторы}{41}{subsection.2.1.1}%
+\contentsline {subsubsection}{Лапласовский регуляризатор (L1 регуляризатор)}{41}{subsubsection*.10}%
+\contentsline {subsubsection}{Гауссовский регуляризатор (L2 регуляризатор)}{41}{subsubsection*.11}%
+\contentsline {subsubsection}{Сравнений L1 и L2 регуляризаторов}{42}{subsubsection*.12}%
+\contentsline {subsection}{\numberline {2.1.2.}Вероятностная интерпретация регуляризации}{42}{subsection.2.1.2}%
+\contentsline {subsubsection}{L1 регуляризация}{43}{subsubsection*.15}%
+\contentsline {subsubsection}{L2 регуляризация}{43}{subsubsection*.16}%
+\contentsline {subsection}{\numberline {2.1.3.}Задачи}{43}{subsection.2.1.3}%
+\contentsline {subsubsection}{Вопрос 1}{43}{subsubsection*.17}%
+\contentsline {subsubsection}{Вопрос 2}{43}{subsubsection*.18}%
+\contentsline {subsubsection}{Вопрос 3}{44}{subsubsection*.20}%
+\contentsline {section}{\numberline {2.2.}Метод наименьших квадратов (МНК) в общем случае}{53}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1.}Про линейную регрессию и МНК}{53}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2.}МНК в общем случае}{53}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3.}Проблемы и ограничения МНК}{53}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4.}Задачи}{54}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3.}Вероятностные функции потерь}{56}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1.}Принцип максимума правдоподобия}{56}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2.}Связь правдоподобия и аппроксимации эмпирического риска}{57}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3.}Вероятностный смысл регуляризации}{57}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4.}Задачи}{58}{subsection.2.3.4}%
+\contentsline {subsubsection}{Задача 1.}{58}{subsubsection*.21}%
+\contentsline {subsubsection}{Задача 2.}{58}{subsubsection*.22}%
+\contentsline {subsubsection}{Задача 3.}{59}{subsubsection*.23}%
+\contentsline {section}{\numberline {2.4.}Методы оценки и проверки моделей}{59}{section.2.4}%
+\contentsline {section}{\numberline {2.5.}Многоклассовая классификация}{62}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1.}Один против всех (one-versus-all)}{62}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2.}Все против всех (all-versus-all)}{64}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3.}Многоклассовая логистическая регрессия}{66}{subsection.2.5.3}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 3. Основы нейросетевых моделей}{68}{chapter.3}%
+\contentsline {section}{\numberline {3.1.}Полносвязная нейронная сеть (Персептрон).}{68}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1.}Модель нейрона МакКаллока-Питтса}{68}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2.}Реализация логических функций с помощью нейрона}{69}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3.}Область применимости многослойных нейронных сетей}{71}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4.}Полносвязная нейронная сеть}{71}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5.}Градиентный спуск}{72}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6.}Стохастический градиентный спуск}{73}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7.}Метод обратного распространения ошибок (BackProp).}{74}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8.}Алгоритм применения метода обратного распространения ошибки в стохастическом градиентном спуске.}{77}{subsection.3.1.8}%
+\contentsline {section}{\numberline {3.2.}Функции активации ReLU и PReLU. Проблема «паралича» сети.}{78}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1.}Про функции активации}{78}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2.}ReLU (Rectified Linear Unit), проблема «паралича» сети}{79}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3.}PReLU (Parametric Rectified Linear Unit)}{79}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4.}Задачи}{79}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3.}Drop Out}{81}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1.}Теоретические сведения}{81}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2.}Реализация}{82}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3.}Задачи}{82}{subsection.3.3.3}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 4. Метрические методы классификации и регрессии}{84}{chapter.4}%
+\contentsline {section}{\numberline {4.1.}Задачи}{88}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1.}Задача 1}{88}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2.}Ответ:}{88}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3.}Задача 2}{89}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4.}Ответ:}{89}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5.}Задача 3}{89}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6.}Ответ:}{89}{subsection.4.1.6}%
+\contentsline {section}{\numberline {4.2.}Формула Надарая-Ватсона.}{90}{section.4.2}%
+\contentsline {section}{\numberline {4.3.}Влияние выбора метрики на качество работы kNN}{93}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1.}Сущность метода \(k\)-ближайших соседей}{93}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2.}Популярные метрики расстояния}{93}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3.}Влияние выбора метрики на качество работы модели}{94}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4.}Примеры задач}{95}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5.}Заключение}{95}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4.}Более быстрые оптимизации kNN.}{96}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1.}BallTree}{96}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2.}KD-Tree}{97}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3.}Примеры задач}{98}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5.}Расстояние Махаланобиса в метрических методах классификации и регрессии}{99}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1.}Определение:}{100}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2.}Преимущества расстояния Махаланобиса:}{100}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3.}Недостатки расстояния Махаланобиса:}{100}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4.}Практические аспекты использования:}{101}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5.}Применение в методах классификации и регрессии}{101}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6.}Задачи}{101}{subsection.4.5.6}%
+\contentsline {section}{\numberline {4.6.}Профиль компактности и оценка обобщающей способности}{105}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1.}CCV}{105}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2.}Профиль компактности}{105}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3.}CCV для метода 1NN}{105}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4.}Пример профилей компактности}{106}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5.}Задачи}{107}{subsection.4.6.5}%
+\contentsline {subsection}{\numberline {4.6.6.}Минимизация CСV}{108}{subsection.4.6.6}%
+\contentsline {subsection}{\numberline {4.6.7.}Random projection trees - \textbf {Annoy}}{108}{subsection.4.6.7}%
+\contentsline {section}{\numberline {4.7.}Отбор эталонных объектов}{112}{section.4.7}%
+\contentsline {section}{\numberline {4.8.}Компактность и профиль компактности}{112}{section.4.8}%
+\contentsline {section}{\numberline {4.9.}Метод окна Парзена.}{116}{section.4.9}%
+\contentsline {section}{\numberline {4.10.}Метод потенциальных функций}{119}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1.}Подбор параметров}{120}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2.}Преимущества и недостатки}{120}{subsection.4.10.2}%
+\contentsline {subsection}{\numberline {4.10.3.}Задачи для самопроверки}{121}{subsection.4.10.3}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 5. Метод опорных векторов}{123}{chapter.5}%
+\contentsline {section}{\numberline {5.1.}SVM-классификация}{123}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1.}Постановка задачи}{123}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2.}Математическая формализация}{123}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3.}Условия разделимости}{123}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4.}Оптимизационная задача}{123}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5.}Двойственная задача}{124}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6.}Ядра}{124}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7.}Дискриминантная функция в ядровом пространстве}{124}{subsection.5.1.7}%
+\contentsline {subsection}{\numberline {5.1.8.}Мягкие границы}{125}{subsection.5.1.8}%
+\contentsline {subsection}{\numberline {5.1.9.}Задача 1}{125}{subsection.5.1.9}%
+\contentsline {subsection}{\numberline {5.1.10.}Задача 2}{126}{subsection.5.1.10}%
+\contentsline {subsection}{\numberline {5.1.11.}Задача 3}{127}{subsection.5.1.11}%
+\contentsline {section}{\numberline {5.2.}SVM-регрессия}{128}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1.}Постановка задачи}{128}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2.}Прямая задача}{128}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3.}Преобразование задачи}{129}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4.}Метод Лагранжа}{129}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5.}Условия оптимальности}{129}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6.}Двойственная задача}{130}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7.}Построение финальной модели}{130}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8.}Выбор ядра}{131}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.9.}Задача 1}{131}{subsection.5.2.9}%
+\contentsline {subsection}{\numberline {5.2.10.}Задача 2}{133}{subsection.5.2.10}%
+\contentsline {subsection}{\numberline {5.2.11.}Задача 3}{133}{subsection.5.2.11}%
+\contentsline {section}{1-norm SVM (LASSO SVM)}{134}{section*.46}%
+\contentsline {section}{Сравнение \(L_2\) и \(L_1\) регуляризации}{135}{section*.47}%
+\contentsline {section}{Doubly Regularized SVM (Elastic Net SVM)}{135}{section*.50}%
+\contentsline {subsection}{Elastic Net Analysis}{136}{subsection*.51}%
+\contentsline {section}{Support Features Machine (SFM)}{137}{section*.53}%
+\contentsline {section}{Relevance Features Machine (RFM)}{138}{section*.54}%
+\contentsline {section}{Задачи}{138}{section*.55}%
+\contentsline {subsection}{Задача 1}{138}{subsection*.56}%
+\contentsline {subsection}{Ответ:}{138}{subsection*.57}%
+\contentsline {subsection}{Задача 2}{139}{subsection*.58}%
+\contentsline {subsection}{Ответ:}{139}{subsection*.59}%
+\contentsline {subsection}{Задача 3}{139}{subsection*.60}%
+\contentsline {subsection}{Ответ:}{140}{subsection*.61}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 6. Метод главных компонент}{141}{chapter.6}%
+\contentsline {section}{Введение в метод главных компонент(PCA)}{141}{section*.62}%
+\contentsline {section}{Задачи на использование метода главных компонент}{142}{section*.63}%
+\contentsline {subsection}{Задача 1: Вклад признаков в главные компоненты}{142}{subsection*.64}%
+\contentsline {subsection}{Задача 2: Ошибка "реконструкции" PCA}{143}{subsection*.65}%
+\contentsline {subsection}{Задача 3: Построить критерий D-оптимальности для выбора лучшиз k-компонент }{145}{subsection*.66}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 7. Нелинейные модели машинного обучения}{147}{chapter.7}%
+\contentsline {section}{Backfitting}{150}{section*.67}%
+\contentsline {subsection}{Алгоритм backfitting}{151}{subsection*.68}%
+\contentsline {subsection}{Задача}{151}{subsection*.69}%
+\contentsline {section}{Метод наименьших квадратов с итеративным пересчётом весов (IRLS)}{152}{section*.70}%
+\contentsline {subsection}{Взвешенные метод наименьших квадратов}{152}{subsection*.71}%
+\contentsline {subsection}{Алгоритм \textbf {IRLS}}{153}{subsection*.72}%
+\contentsline {subsection}{Задачи}{153}{subsection*.73}%
+\contentsline {subsubsection}{Задача 1: WLS}{153}{subsubsection*.74}%
+\contentsline {subsubsection}{Задача 2: Пример IRLS для $l_1$}{154}{subsubsection*.75}%
+\contentsline {subsubsection}{Задача 3: Зависимость весов для $l_p$}{154}{subsubsection*.76}%
+\contentsline {subsubsection}{Задача 4: Логистическая регрессия как IRLS}{154}{subsubsection*.77}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 8. Обобщенные линейные модели}{155}{chapter.8}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 9. Нестандартные функции потерь}{156}{chapter.9}%
+\contentsline {subsubsection}{Задача 2.}{162}{subsubsection*.79}%
+\contentsline {subsubsection}{Решение}{162}{subsubsection*.80}%
+\contentsline {subsubsection}{Задача 3.}{163}{subsubsection*.81}%
+\contentsline {subsubsection}{Решение}{163}{subsubsection*.82}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 10. Критерии выбора моделей}{172}{chapter.10}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 11. Методы отбора признаков}{178}{chapter.11}%
+\contentsline {section}{Качество классификации}{178}{section*.85}%
+\contentsline {section}{Методы отбора признаков: полный перебор, алгоритм Add}{182}{section*.88}%
+\contentsline {subsection}{Генерация новых признаков}{182}{subsection*.89}%
+\contentsline {subsection}{Полный перебор}{183}{subsection*.90}%
+\contentsline {subsection}{Жадный алгоритм Add}{183}{subsection*.91}%
+\contentsline {subsection}{Задачи}{185}{subsection*.92}%
+\contentsline {subsubsection}{Задача 1.}{185}{subsubsection*.93}%
+\contentsline {subsubsection}{Ответ 1.}{185}{subsubsection*.94}%
+\contentsline {subsubsection}{Задача 2.}{185}{subsubsection*.95}%
+\contentsline {subsubsection}{Ответ 2.}{185}{subsubsection*.97}%
+\contentsline {subsubsection}{Вопрос 3.}{186}{subsubsection*.98}%
+\contentsline {subsubsection}{Ответ 3.}{186}{subsubsection*.99}%
+\contentsline {section}{Методы преобразования категориальных признаков}{186}{section*.100}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 12. Логические методы классификации}{191}{chapter.12}%
+\contentsline {section}{Бинаризация признаков}{191}{section*.103}%
+\contentsline {subsection}{Бинаризация количественных признаков}{191}{subsection*.104}%
+\contentsline {subsection}{Разбиение диапазона значений признака на зоны}{192}{subsection*.106}%
+\contentsline {subsection}{Жадный алгоритм слияния зон}{192}{subsection*.107}%
+\contentsline {subsection}{Задачи}{193}{subsection*.109}%
+\contentsline {section}{Взвешенное голосование правил}{195}{section*.110}%
+\contentsline {subsection}{Принцип голосования}{195}{subsection*.111}%
+\contentsline {subsection}{Алгоритм взвешенного голосования}{195}{subsection*.112}%
+\contentsline {subsection}{Проблема диверсификации правил}{196}{subsection*.113}%
+\contentsline {subsection}{Отказы от классификации}{197}{subsection*.114}%
+\contentsline {subsection}{Задачи}{198}{subsection*.115}%
+\contentsline {section}{Алгоритм ТЭМП}{199}{section*.116}%
+\contentsline {subsection}{Алгоритм 1.9. Построение списка информативных конъюнкций методом поиска в ширину (алгоритм ТЭМП)}{200}{subsection*.117}%
+\contentsline {subsection}{Алгоритм 1.9: Построение списка информативных конъюнкций методом поиска в ширину}{200}{subsection*.118}%
+\contentsline {subsection}{Достоинства алгоритма ТЭМП}{201}{subsection*.119}%
+\contentsline {subsection}{Недостатки алгоритма ТЭМП}{201}{subsection*.120}%
+\contentsline {subsection}{Задачи}{202}{subsection*.121}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 13. Поиск ассоциативных правил}{203}{chapter.13}%
+\contentsline {section}{Алгоритм FP-Growth}{203}{section*.122}%
+\contentsline {subsection}{Построение FP-дерева}{203}{subsection*.123}%
+\contentsline {subsection}{Построение условного FP-дерева}{204}{subsection*.126}%
+\contentsline {subsection}{Построение списка ассоциативных правил}{205}{subsection*.127}%
+\contentsline {subsection}{Задачи для практики}{205}{subsection*.128}%
+\contentsline {section}{Алгоритм APriory}{207}{section*.129}%
+\contentsline {subsection}{Свойство антимонотонности}{207}{subsection*.130}%
+\contentsline {subsection}{Поиск частых наборов}{208}{subsection*.131}%
+\contentsline {subsection}{Выделение ассоциативных правил.}{208}{subsection*.132}%
+\contentsline {subsection}{Задачи для практики}{209}{subsection*.133}%
+\contentsline {subsubsection}{Задача 1: Простота алгоритма APriory:}{209}{subsubsection*.134}%
+\contentsline {subsubsection}{Задача 2: Сложность алгоритма APriory:}{210}{subsubsection*.136}%
+\contentsline {subsubsection}{Задача 3: Недостатки алгоритма APriory на практике:}{211}{subsubsection*.137}%
+\contentsline {section}{Задача автоматического выделения терминов: алгоритм TopMine, UDPipe, модель PLSA.}{211}{section*.138}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 14. Композиции классификаторов}{217}{chapter.14}%
+\contentsline {section}{Mixture of Experts (Смесь экспертов)}{217}{section*.142}%
+\contentsline {subsection}{Задачи и решения}{217}{subsection*.143}%
+\contentsline {subsubsection}{Задача 1}{217}{subsubsection*.144}%
+\contentsline {subsubsection}{Задача 2}{218}{subsubsection*.145}%
+\contentsline {subsubsection}{Задача 3}{219}{subsubsection*.146}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 15. Методы бустинга}{220}{chapter.15}%
+\contentsline {section}{Градиентный бустинг}{223}{section*.147}%
+\contentsline {subsection}{Что такое градиентный бустинг и его история}{223}{subsection*.148}%
+\contentsline {subsection}{Объяснение с лекции К.В.Воронцова}{224}{subsection*.149}%
+\contentsline {subsection}{Классическая аналогия с гольфом}{225}{subsection*.150}%
+\contentsline {subsection}{Применимость градиентного бустинга}{226}{subsection*.151}%
+\contentsline {subsection}{Задачи для практики}{226}{subsection*.152}%
+\contentsline {subsubsection}{Задача 1: Оптимизация базового алгоритма}{226}{subsubsection*.153}%
+\contentsline {subsubsection}{Задача 2: Влияние параметра $\alpha $}{227}{subsubsection*.154}%
+\contentsline {subsubsection}{Задача 3: Отрицательные значения на тесте}{227}{subsubsection*.155}%
+\contentsline {subsection}{Полезные ссылки}{228}{subsection*.156}%
+\contentsline {section}{CatBoost}{228}{section*.157}%
+\contentsline {section}{LightGBM}{235}{section*.160}%
+\contentsline {subsection}{Анализ сложности градиентного бустинга над решающими деревьями}{235}{subsection*.161}%
+\contentsline {subsection}{Gradient-based One-Side Sampling (GOSS)}{235}{subsection*.162}%
+\contentsline {subsection}{Exclusive Feature Bundling (EFB)}{237}{subsection*.163}%
+\contentsline {subsection}{Задачи}{237}{subsection*.164}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 16. Байесовская теория классификации}{239}{chapter.16}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 17. Методы кластеризации}{249}{chapter.17}%
+\contentsline {section}{Критерии качества кластеризации}{249}{section*.168}%
+\contentsline {subsection}{Критерии, не требующие разметки выборки}{249}{subsection*.169}%
+\contentsline {subsubsection}{Среднее внутрикластерное расстояние}{249}{subsubsection*.170}%
+\contentsline {subsubsection}{Среднее межкластерное расстояние}{250}{subsubsection*.171}%
+\contentsline {subsection}{Критерии, требующие разметки выборки}{250}{subsection*.172}%
+\contentsline {subsubsection}{Гомогенность}{250}{subsubsection*.173}%
+\contentsline {subsubsection}{Полнота}{251}{subsubsection*.174}%
+\contentsline {subsubsection}{V-мера}{252}{subsubsection*.175}%
+\contentsline {subsubsection}{Коэффициент силуэта}{252}{subsubsection*.176}%
+\contentsline {subsection}{Различия и выбор метрик качества кластеризации}{253}{subsection*.177}%
+\contentsline {subsection}{Задачи на понимание}{253}{subsection*.178}%
+\contentsline {subsubsection}{Задача 1}{253}{subsubsection*.179}%
+\contentsline {subsubsection}{Ответ}{253}{subsubsection*.180}%
+\contentsline {subsubsection}{Задача 2}{253}{subsubsection*.181}%
+\contentsline {subsubsection}{Ответ}{254}{subsubsection*.182}%
+\contentsline {subsubsection}{Задача 3}{254}{subsubsection*.183}%
+\contentsline {subsubsection}{Ответ}{254}{subsubsection*.184}%
+\contentsline {section}{DBSCAN}{254}{section*.185}%
+\contentsline {subsection}{Примечание о HDBSCAN}{256}{subsection*.187}%
+\contentsline {subsection}{Задачи}{256}{subsection*.189}%
+\contentsline {section}{Простые эвристические методы частичного обучения}{262}{section*.191}%
+\contentsline {subsection}{Постановка задачи}{262}{subsection*.192}%
+\contentsline {subsection}{Self-training}{264}{subsection*.193}%
+\contentsline {subsection}{Сo-training}{265}{subsection*.194}%
+\contentsline {subsection}{Сo-learning}{266}{subsection*.195}%
+\contentsline {subsection}{Задачи}{266}{subsection*.196}%
+\contentsline {chapter}{\normalfont \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 1\p@ plus2.5\p@ minus\p@ \topsep 2\p@ plus5\p@ minus7\p@ \itemsep 1\p@ plus2.5\p@ minus\p@ {{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra }} 18. Обучение на неразмеченных данных}{269}{chapter.18}%
+\contentsline {section}{Постановка}{269}{section*.197}%
+\contentsline {section}{Суперпозиция}{269}{section*.198}%
+\contentsline {section}{Постановка задачи SimCLR}{269}{section*.199}%
+\contentsline {section}{Вопросы}{271}{section*.201}%
