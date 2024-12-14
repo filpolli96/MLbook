@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\usepackage{preamble}
+\usepackage{cancel}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{STIX}
+\newfontfamily{\cyrillicfont}[Ligatures=TeX]{STIX}
+\setmonofont{Fira Mono}
+\newfontfamily{\cyrillicfonttt}{Fira Mono}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\newpage
+\include{sections/kde.tex}
+
+\end{document}

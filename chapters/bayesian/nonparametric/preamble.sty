@@ -1,0 +1,53 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble}[Preamble]
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{physics}
+% \RequirePackage{booktabs}
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+%% Math
+\newcommand{\then}{\Longrightarrow}
+\renewcommand{\iff}{\Longleftrightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+
+\newcommand{\set}[1]{\left\{#1\right\}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\osmall}[1][1]{\overline{\overline{o}} (#1)}
+\newcommand{\obig}[1][1]{\underline{\underline{O}} (#1)}
+
+\newcommand{\half}{\frac{1}{2}}
+
+\newcommand{\asto}{\xrightarrow{\text{п.н.}}}
+
+\def\<{\langle}
+\def\>{\rangle}
+
+\newcommand{\dotp}[2]{\left\<#1,\,#2\right\>}
+
+\counterwithin{equation}{section}
+
+%% Headers and environments
+\newcommand{\ptitle}[1]{\par\noindent\textbf{#1}}
+\newcommand{\psub}[1]{\par\noindent\textit{#1}}
+
+\newcounter{task}[section]
+\setcounter{task}{1}
+\newenvironment{task}[1][\numexpr\thetask + 1 \relax]%
+{\setcounter{task}{\numexpr #1 - 1\relax}\ptitle{Задача~\stepcounter{task}\thetask. }}%
+{\smallskip}
+
+\newenvironment{solution}%
+{\ptitle{Решение.}\par}%
+{\bigskip}
+
