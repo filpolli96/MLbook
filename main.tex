@@ -1,4 +1,4 @@
-\documentclass{mybook}
+\documentclass{disser}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
@@ -9,15 +9,37 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{color}
 \usepackage{bm}
 \usepackage{tabularx}
 \usepackage{url}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{tcolorbox}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{multirow}
 \usepackage{lastpage}
 \usepackage{systeme}
 \usepackage{booktabs}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{algpseudocode}
+
+\pgfplotsset{compat=1.18}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Определение}
+\theoremstyle{definition}
+\newtheorem*{proposition}{Предложение}
+\theoremstyle{definition}
+\newtheorem{problem}{Задача}
+\theoremstyle{remark}
+\newtheorem*{remark}{Замечание}
+\theoremstyle{remark}
+\newtheorem*{solution}{Решение}
 
 \usepackage[toc,page]{appendix}
 \usepackage{hyperref}
@@ -74,6 +96,7 @@ sorting=ynt
 \addbibresource{chapters/bayesian/main.bib}
 \addbibresource{chapters/clustering/main.bib}
 \addbibresource{chapters/unlabeled/main.bib}
+\addbibresource{chapters/anomalies/main.bib}
 
 \begin{document}
 % Титульный лист
@@ -142,6 +165,10 @@ sorting=ynt
     \input{chapters/mixture/main}
 
     \clearpage
+    \chapter{Ансамблирования классификаторов}
+    \input{chapters/ensembles/main}
+
+    \clearpage
     \chapter{Методы бустинга}
     \input{chapters/boosting/main}
 
@@ -157,8 +184,16 @@ sorting=ynt
     \chapter{Обучение на неразмеченных данных}
     \input{chapters/unlabeled/main}
 
+    \clearpage
+    \chapter{Квазилинейные классификаторы}
+    \input{chapters/semilinclass/main}
+
+    \clearpage
+    \chapter{Детекция аномалий}
+    \input{chapters/anomalies/main}
+
+
     % Bibliography
     \clearpage
     \printbibliography
 \end{document}
-
