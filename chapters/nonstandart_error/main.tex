@@ -20,7 +20,7 @@ $$\frac{1}{\ell}\sum\limits_{i=1}^\ell\left(a - y_i\right)^2 \longrightarrow \mi
 
 А в случае использования метода наименьших модулей задача будет выглядеть так:
 $$\frac{1}{\ell}\sum\limits_{i=1}^\ell\left|a - y_i\right| \longrightarrow \min\limits_{a}.$$
-Здесь опять же можно посчитать ответ аналитически, оптимальным $a$ будет $a = \median\left\{ y_1, \dotsc, y_\ell \right\} = y_{(\ell / 2)}$ (серединный член вариационного ряда). Эта оценка хороша тем, что устойчива к выбросам, хорошо работает для распределений ошибок с тяжелыми <<хвостами>>.
+Здесь опять же можно посчитать ответ аналитически, оптимальным $a$ будет $a = \text{median}\left\{ y_1, \dotsc, y_\ell \right\} = y_{(\ell / 2)}$ (серединный член вариационного ряда). Эта оценка хороша тем, что устойчива к выбросам, хорошо работает для распределений ошибок с тяжелыми <<хвостами>>.
 
 Таким образом, использование метода наименьших модулей в некоторых ситуациях помогает бороться с выбросами.
 
@@ -122,9 +122,9 @@ L(\varepsilon) = \max(0, | y - f(x) | - \varepsilon).
 \begin{align*}
     L(\varepsilon, \alpha) = 
         \begin{cases}
-            \case 0, & | y - f(x) | \leq \varepsilon \\
-            \case \alpha(y - f(x)) - \varepsilon, & y - f(x) > \varepsilon \\
-            \case \frac{(y - f(x))}{\alpha} - \varepsilon, & f(x) - y > \varepsilon
+            0, & | y - f(x) | \leq \varepsilon \\
+            \alpha(y - f(x)) - \varepsilon, & y - f(x) > \varepsilon \\
+            \frac{(y - f(x))}{\alpha} - \varepsilon, & f(x) - y > \varepsilon
         \end{cases}
 \end{align*}
 где \(\alpha > 1\) задаёт степень асимметрии штрафования. Такая функция потерь позволит модели сильнее реагировать на недостаточную оценку и слабее —-- на переоценку.
@@ -146,9 +146,9 @@ L(\varepsilon) = \max(0, | y - f(x) | - \varepsilon).
 \begin{align*}
     L(\varepsilon) = 
     \begin{cases}
-            \case 0, & | y_i - f(x_i) | \leq \varepsilon \\
-            \case 2(y_i - f(x_i) - \varepsilon), & y_i - f(x_i) > \varepsilon \\
-            \case f(x_i) - y_i- \varepsilon, & f(x_i) - y_i > \varepsilon
+            0, & | y_i - f(x_i) | \leq \varepsilon \\
+            2(y_i - f(x_i) - \varepsilon), & y_i - f(x_i) > \varepsilon \\
+            f(x_i) - y_i- \varepsilon, & f(x_i) - y_i > \varepsilon
         \end{cases}
 \end{align*}
 
@@ -319,6 +319,439 @@ $$
 
 Поскольку $Y_i'$ теперь не является «жёстким» one-hot вектором, модель не будет излишне стремиться предсказывать для истинного класса вероятность ровно 1, что снижает риск переобучения и делает распределение прогнозов более гладким и устойчивым.
 \end{solution}
+
+
+\section*{Проксимальный метод.}
+
+\subsection*{Основная идея.}
+
+Явный вид шага градиентного спуска:
+
+\begin{equation}
+    \frac{x_{i+1}-x_i}\alpha=-\nabla f(x_k)
+\end{equation}
+
+\begin{equation}
+    x_{i+1}=x_i-\alpha\nabla f(x_k)
+\end{equation}
+
+Неявный вид шага градиентного спуска:
+
+\begin{equation}
+    \frac{x_{i+1}-x_i}\alpha=-\nabla f(x_k+1)
+\end{equation}
+
+\begin{equation}
+    x_{i+1}-x_i+\alpha\nabla f(x_k)=0
+\end{equation}
+
+\begin{equation}
+    \nabla\left(\frac12\|x_{i+1}-x_i\|_2^2+\alpha f(x_k)\right)=0
+\end{equation}
+
+\begin{equation}
+    x_{i+1}=\mathop{argmin}\limits_{x\in\mathbb{R}^n}\left(\frac12\|x-x_i\|_2^2+\alpha f(x)\right)
+\end{equation}
+
+Определим проксимальное отображение следующим образом:
+
+\begin{equation}
+    prox_r(x)=\mathop{argmin}\limits_{y\in\mathbb{R}^n}\left(\frac12\|y-x\|_2^2+r(y)\right).
+\end{equation}
+
+Идея. Пусть минимизируемый функционал принимает вид суммы гладкой (сложной) функции $f$ и негладкой Функции (простой) $r$. В таком случае из-за негладкости $r$ обычный алгоритм градиентного спуска будет работать не очень шорошо.
+
+\begin{equation}
+    0\in\nabla f(x^*)+\partial r(x^*)
+\end{equation}
+
+\begin{equation}
+    x^*\in\alpha\nabla f(x^*)+(I+\alpha\partial r)(x^*)
+\end{equation}
+
+\begin{equation}
+    x^*-\alpha\nabla f(x^*)\in(I+\alpha\partial r)(x^*)
+\end{equation}
+
+\begin{equation}
+    x^*=(I+\alpha\partial r)^{-1}(x^*-\alpha\nabla f(x^*))
+\end{equation}
+
+\begin{equation}
+    x^*=prox_{\alpha r}(x^*-\alpha\nabla f(x^*))
+\end{equation}
+
+Последнее выражение называется шагом проксимального градиентного спуска.
+
+\subsection*{Свойства.}
+
+\subsubsection*{Существование и единственность.}
+
+Теорема.
+
+Пусть r:$\mathbb{R}^n\mapsto \mathbb{R}\cap\{+\infty\}$ -- выпуклая функция, которая хотя бы в одной точке принимает конечное значение.
+Тогда $prox_r$ определено однозначно.
+
+Доказательство:
+
+$r(y)+\frac12\|y-x\|_2^2$ сильно выпуклая функция, которая хотя бы в одной точке принимает конечное значение. Значит, $r(y)+\frac12|y-x|^2$ имеет единственный минимум, и $prox_r(x)=\mathop{argmin}\limits_{y\in\mathbb{R}^n}\left(\frac12\|y-x\|_2^2+r(y)\right)$ определено однозначно.
+
+\subsubsection*{Основные свойства.}
+
+Теорема.
+
+Следующие свойства равносильны:
+
+\begin{itemize}
+\item\[prox_r(x)=y,\]
+\item\[x-y\in\partial(y),\]
+\item\[\forall z\in\mathbb{R}^n:\langle x-y,z-y\rangle\leq r(z)-r(y).\]
+\end{itemize}
+
+Доказательство.
+
+Согласно определению субдиференциала:
+
+\begin{equation}
+    g\in\partial(y)\iff\forall z\in\mathbb{R}^n:\langle g,z-y\rangle\leq r(z)-r(y).
+\end{equation}
+
+Поэтому последние лва свойства эквивалентны.
+
+Согласно определению проксимального оператора:
+
+\begin{equation}
+    prox_r(x)=y\iff y=\mathop{argmin}\limits_{z\in\mathbb{R}^n}\left(\frac12\|z-x\|_2^2+r(z)\right).
+\end{equation}
+
+То, что фунция достигает минимума в неторой функции, равносильно тому 0 -- субградиент функции в этой точке:
+
+\begin{equation}
+    y=\mathop{argmin}\limits_{z\in\mathbb{R}^n}\left(\frac12\|z-x\|_2^2+r(z)\right)\iff
+    0\in\partial\left(\frac12\|y-x\|_2^2+r(y)\right).
+\end{equation}
+
+\begin{equation}
+    0\in\partial\left(\frac12\|y-x\|_2^2+r(y)\right)=
+    (y-x)+\partial r(y)\iff x-y\in\partial r(y).
+\end{equation}
+
+Таким образом первые два свойства эквивалентны.
+
+\subsubsection*{Нерасширямость.}
+
+Теорема.
+
+$prox_r(x)$ -- firmly nonexpansive, то есть:
+
+\begin{equation}
+    \|prox_r(x)-prox_r(y)\|_2^2\leq
+    \langle prox_r(x)-prox_r(y),x-y\rangle.
+\end{equation}
+
+В частности (по неравенству КБШ):
+
+\begin{equation}
+    \|prox_r(x)-prox_r(y)\|_2\leq\|x-y\|_2.
+\end{equation}
+
+Доказательство.
+
+Из предыдущей теоремы для $y_i=prox_r(x_i)$ следует:
+
+\begin{equation}
+    \forall z_i\in\mathbb{R}^n:
+    \langle x_i-y_i,z-y_i\rangle\leq r(z_i)-r(y_i).
+\end{equation}
+
+Подставляя $z_i=y_{1-i})$ и суммируя для $i$ равным 0 и 1, получаем:
+
+\begin{equation}
+    \langle x_0-y_0,y_1-y_0\rangle+
+    \langle x_1-y_1,y_0-y_1\rangle\leq0,
+\end{equation}
+
+что эквивалентно:
+
+\begin{equation}
+    \|y_0-y_1\|^2\leq\langle x_0-x_1,y_0-y_1\rangle.
+\end{equation}
+
+\subsubsection*{Сохранение точки минимума.}
+
+Покажем, что шаг градиентного спуска переводит точку минимума $x^*$ функции $f(x)+r(x)$ в себя.
+
+$x^*$ -- минимум функции $f(x)+r(x)$:
+
+\begin{equation}
+    0=\nabla f(x^*)+\partial r(x^*)
+\end{equation}
+
+\begin{equation}
+    (x^*-\alpha\nabla f(x^*))-x^*=\partial\alpha r(x^*)
+\end{equation}
+
+Доказанное ранее свойство:
+
+\begin{equation}
+    y=prox_r(x)\iff x-y\in\partial r(y).
+\end{equation}
+
+Таким образом для $x=x^*-\alpha\nabla f(x^*)$ и проксимального оператора от $\alpha r$ выполнено, что $x^*=y=prox_{\alpha r}(x)=prox_{\alpha r}(x^*-\alpha\nabla f(x^*))$.
+
+\subsection*{Сходимость проксимального градиентного спуска.}
+
+Во всех теоремах минимизируется функция $\phi(x)=f(x)+r(x)$. Требования к функциям $f(x)$ и $r(x)$:
+
+$f$ выпукло и дифференцируемо. $\nabla f$ -- Липшицева функция с константой $L$.
+
+$r$ выпукло, значение фунции $prox_{\alpha r}$ можно вычислить.
+
+Шаг $\alpha$ поястоянен и не превосходит $\frac1L$.
+
+\subsubsection*{Сходимость в общем случае.}
+
+Теорема.
+
+Шаг проксимального градинтного спуска:
+
+\begin{equation}
+    x_{k+1}=prox_{\alpha r}(x_k-\alpha\nabla f(x_k)).
+\end{equation}
+
+Тогда проксимальный градинтный спуск с шагом $\alpha=\frac1L$ сходится со скоростью:
+
+\begin{equation}
+    \phi(x_k)-\phi(x^*)\leq\frac{L\|x_0-x^*\|_2^2}{2k}.
+\end{equation}
+
+Доказательство.
+
+Определим $ G_\alpha(x)$:
+
+\begin{equation}
+    G_\alpha(x)=\frac1\alpha\left(x-prox_{\alpha r}(x-\alpha\nabla f)\right).
+\end{equation}
+
+Из выпуклости $f$ и L-липшицевости $\nabla f$:
+
+\begin{equation}
+\begin{aligned}
+    f(x_{k+1})\leq
+    f(f_k)+\langle\nabla f(x_k),x_{k+1}-x_k\rangle+\frac L2\|x_{k+1}-x_k\|_2^2\leq\\\leq
+    f(x)-\langle\nabla f(x_k),x-x_k\rangle+\langle\nabla f(x_k),x_{k+1}-x_k\rangle+\frac L2\|\alpha G_\alpha(x_k\|_2^2=\\=
+    f(x)+\langle\nabla f(x_k),x_{k+1}-x\rangle+\frac{\alpha^2L}2\|G_\alpha(x_k)\|_2^2.
+\end{aligned}
+\end{equation}
+
+Из свойств проксимального оператора:
+
+\begin{equation}
+\begin{aligned}
+    G_\alpha(x_k)-\nabla f(x_k)=
+    \frac1\alpha\left(x_k-\alpha\nabla f(x_k)-prox_{\alpha r}(x_k-\alpha\nabla f(x_k))\right)\in\\\in\partial r(prox_{\alpha r}(x_k-\alpha\nabla f(x_k))=\partial r(x_{k+1}).
+\end{aligned}
+\end{equation}
+
+Согласно определению субградиента выпуклой функции $r$:
+
+\begin{equation}
+    r(x)\geq r(x_{k+1})+\langle G_\alpha(x_k)-\nabla f(x_k),x-x_{k+1}\rangle.
+\end{equation}
+
+Разность неравенств на $f$ и $r$ даёт неравенство на $\phi(x)=f(x)+r(x)$:
+
+\begin{equation}
+\begin{aligned}
+    \phi(x_{k+1})-\phi(x)\leq\langle\nabla f(x_{k+1}),x_{k+1}-x\rangle+\frac{\alpha^2L}2\|G_\alpha(x_k)\|_2^2-\\-\langle G_\alpha(x_k)-\nabla f(x_{k+1}),x-x_{k+1}\rangle=
+    \langle G_\alpha(x_k),x_{k+1}-x\rangle+\frac{\alpha^2L}2\|G_\alpha(x_k)\|_2^2=\\=
+    \langle G_\alpha(x_k),x_k-x\rangle-\langle G_\alpha(x_k),\alpha G_\alpha(x_k)\rangle+\frac{\alpha^2L}2\|G_\alpha(x_k)\|_2^2=\\=
+    \langle G_\alpha(x_k),x_k-x\rangle+\frac\alpha2(\alpha L-2)\|G_\alpha(x_k)\|_2^2\leq
+    \langle G_\alpha(x_k),x_k-x\rangle-\frac\alpha2\|G_\alpha(x_k)\|_2^2.
+\end{aligned}
+\end{equation}
+
+Подставив $x=x_k$ получаем убывание значения функции $\phi(x_k)$:
+
+\begin{equation}
+    \phi(x_{k+1})-\phi(x_k)\leq-\frac\alpha2\|G_\alpha(x_k)\|_2^2.
+\end{equation}
+
+Подставим $x=x^*$:
+
+\begin{equation}
+\begin{aligned}
+    \phi(x_{k+1})-\phi(x^*)\leq
+    \langle G_\alpha(x_k),x_k-x^*\rangle-\frac\alpha2\|G_\alpha(x_k)\|_2^2=\\=
+    \frac1{2\alpha}\left(2\langle\alpha G_\alpha(x_k),x_k-x^*\rangle-\|\alpha G_\alpha(x_k)\|_2^2-\|x_k-x^*\|_2^2+\|x_k-x^*\|_2^2\right)=\\=
+    \frac1{2\alpha}\left(\|x_k-x^*\|_2^2-\|x_k-\alpha G_\alpha(x_k)-x^*\|_2^2\right)=\\=
+    \frac1{2\alpha}\left(\|x_k-x^*\|_2^2-\|x_{k+1}-x^*\|_2^2\right).
+\end{aligned}
+\end{equation}
+
+Просуммируем неравенство для разных $k$:
+
+\begin{equation}
+\begin{aligned}
+    \sum\limits_{i=1}^k(\phi(x_i)-\phi(x^*))\leq
+    \sum\limits_{i=1}^k\frac1{2\alpha}\left(\|x_{i-1}-x^*\|_2^2-\|x_i-x^*\|_2^2\right)=\\=
+    \frac1{2\alpha}\left(\|x_0-x^*\|_2^2-\|x_k-x^*\|_2^2\right)\leq
+    \frac1{2\alpha}\|x_0-x^*\|_2^2.
+\end{aligned}
+\end{equation}
+
+Поскольку $\phi(x_k)$ -- убывающая последовательность:
+
+\begin{equation}
+    \phi(x_k)-\phi(x^*)\leq
+    \frac1k\sum\limits_{i=1}^k(\phi(x_i)-\phi(x^*))\leq
+    \frac{\|x_0-x^*\|_2^2}{2\alpha k}.
+\end{equation}
+
+Для $\alpha$ в точности равного $\frac1L$:
+
+\begin{equation}
+    \phi(x_k)-\phi(x^*)\leq
+    \frac1k\sum\limits_{i=1}^k(\phi(x_i)-\phi(x^*))\leq
+    \frac{L\|x_0-x^*\|_2^2}{2k}.
+\end{equation}
+
+\subsubsection*{Сходимость в сильно выпуклом случае.}
+
+Теорема.
+
+Шаг проксимального градинтного спуска:
+
+\begin{equation}
+    x_{k+1}=prox_{\alpha r}(x_k-\alpha\nabla f(x_k)).
+\end{equation}
+
+На $f(x)$ дополнительно налагается требование $\mu$-сильной выпуклости.
+
+Тогда проксимальный градинтный спуск с шагом $\alpha=\frac1L$ сходится со скоростью:
+
+\begin{equation}
+    \|x_k-x^*\|_2^2\leq(1-\alpha\mu)^k\|x_0-x^*\|_2^2.
+\end{equation}
+
+Доказательство.
+
+Подставим шаг проксимального градинтного спуска:
+
+\begin{equation}
+\begin{aligned}
+    \|x_{k+1}-x^*\|_2^2=
+    \|prox_{\alpha r}(x_k-\alpha\nabla f(x_k))-x^*\|_2^2=\\=
+    \|prox_{\alpha r}(x_k-\alpha\nabla f(x_k))-
+    prox_{\alpha r}(x^*-\alpha\nabla f(x^*))\|_2^2\leq\\\leq
+    \|x_k-\alpha\nabla f(x_k)-x^*+\alpha\nabla f(x^*)\|_2^2=\\=
+    \|x_k-x^*\|_2^2-
+    2\alpha\langle\nabla f(x_k)-\nabla f(x^*),x_k-x^*\rangle+
+    \alpha^2\|\nabla f(x_k)-\nabla f(x^*)\|_2^2.
+\end{aligned}
+\end{equation}
+
+Из L-липшицевости $\nabla f$:
+
+\begin{equation}
+    \alpha^2\|\nabla f(x_k)-\nabla f(x^*)\|_2^2\leq
+    2L\left(f(x_k)-f(x^*)-\langle\nabla f(x^*),x_k-x^*\rangle\right).
+\end{equation}
+
+Из сильной выпуклости $f$:
+
+\begin{equation}
+    \langle\nabla f(x_k)-\nabla f(x^*),x_k-x^*\rangle\geq
+    \left(f(x_k)-f(x^*)+\frac\mu2\|x_k-x^*\|_2^2\right)+\langle\nabla f(x^*),x_k-x^*\rangle.
+\end{equation}
+
+Подставим:
+
+\begin{equation}
+\begin{aligned}
+    \|x_{k+1}-x^*\|_2^2\leq
+    \|x_k-x^*\|_2^2-
+    2\alpha\left(f(x_k)-f(x^*)+\frac\mu2\|x_k-x^*\|_2^2\right)-\\-
+    2\alpha\langle\nabla f(x^*),x_k-x^*\rangle+
+    2\alpha^2 L\left(f(x_k)-f(x^*)-\langle\nabla f(x^*),x_k-x^*\rangle\right)=\\=
+    (1-\alpha\mu)\|x_k-x^*\|_2^2+
+    2\alpha(\alpha L-1)\left(f(x_k)-f(x^*)-\langle\nabla f(x^*),x_k-x^*\rangle\right).
+\end{aligned}
+\end{equation}
+
+Поскольку $\alpha\leq\frac1L$ и из выпуклости функции $f$ следует $f(x_k)-f(x^*)-\langle\nabla f(x^*),x_k-x^*\geq0$, выполнено:
+
+\begin{equation}
+    \|x_{k+1}-x^*\|_2^2\leq(1-\alpha\mu)\|x_k-x^*\|_2^2.
+\end{equation}
+
+Таким образом по индукции:
+
+\begin{equation}
+    \|x_k-x^*\|_2^2\leq(1-\alpha\mu)^k\|x_0-x^*\|_2^2.
+\end{equation}
+
+\subsubsection*{Сходимость ускоренного проксимального градиентного метода.}
+
+Теорема.
+
+Шаг ускоренного проксимального градинтного метода:
+
+\begin{equation}
+    y_k=prox_{\alpha r}(x_{k-1}-\alpha\nabla f({k-1})).
+\end{equation}
+
+\begin{equation}
+    x_k=y_k+\frac{k-1}{k+2}(x_k-x_{k-1}).
+\end{equation}
+
+Ускоренный проксимальный градинтный спуск с шагом $\alpha=\frac1L$ сходится со скоростью:
+
+\begin{equation}
+    \phi(x_k)-\phi(x^*)\leq\frac{2L\|x_0-x^*\|_2^2}{k^2}.
+\end{equation}
+
+\subsection*{Задачи.}
+
+\subsubsection*{Задача 1.}
+
+Показать, что оператор проекции на множество -- частный случай проксимального оператора.
+
+Идея: использовать индикатор множества:
+
+\begin{equation}
+    I_M(x)=\begin{cases}
+        0,&x\in M\\
+        +\infty,&x\not\in M
+    \end{cases}.
+\end{equation}
+
+\subsubsection*{Задача 2.}
+
+Найти $prox_{\alpha\|\cdot\|_1}(x)$ и $prox_{\alpha\|\cdot\|_2^2}(x)$.
+
+Идея: минимизурумая функция представляется в виде покоординатной суммы, и каждую координату можно минимзировать отдельно.
+
+Ответ:
+
+\begin{equation}
+    prox_{\alpha\|\cdot\|_2^2}(x)=\frac{x}{1+\alpha},
+\end{equation}
+
+\begin{equation}
+    prox_{\alpha\|\cdot\|_1}(x_i)=\begin{cases}
+        x-\alpha&x\geq\alpha\\
+        0&|x|\leq\alpha\\
+        x+\alpha&x\leq-\alpha\\
+    \end{cases}.
+\end{equation}
+
+\subsubsection*{Задача 3.}
+
+Написать алгоритм оптимизации ElasticNet методом проксимального градиентного спуска.
+
+Идея: использовать ответ предыдущей задачи и стандартный алгоритм проксимального градиентного спуска.
+
 
 \section*{Функции потерь для задач несбалансированной классификации}
 
@@ -495,4 +928,3 @@ Class Balanced Loss предлагает решить проблему несб�
     \]
     При большом $N$ эффективное число выборки равно ее размеру. Это значит, что нет перекрытия данных, следовательно каждый объект уникален. С другой стороны, если $N=1$, $E_n=1$, что означает существования единственного прототипа, так что все данные в этом классе могут быть представлены им посредством аугментации данных, преобразований и т.п., Q.E.D.
 \end{solution}
-
