@@ -1,45 +1,4 @@
-\documentclass[10pt,a4paper]{article}
-
-\bibliographystyle{gost} 
-\usepackage{cmap}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
-\usepackage{indentfirst}
-\usepackage{amsmath}
-\usepackage{bm}
-\usepackage{graphicx}
-\usepackage{verbatim}
-\usepackage{authblk}
-% Переопределение для удаления слова "and" перед последним автором
-\renewcommand\Authands{, } % Удаляем слово "and"
-
-
-\newcommand{\appropto}{\mathrel{\vcenter{
-  \offinterlineskip\halign{\hfil$##$\cr
-    \propto\cr\noalign{\kern2pt}\sim\cr\noalign{\kern-2pt}}}}}
-
-\def\app#1#2{%
-  \mathrel{%
-    \setbox0=\hbox{$#1\sim$}%
-    \setbox2=\hbox{%
-      \rlap{\hbox{$#1\propto$}}%
-      \lower1.1\ht0\box0%
-    }%
-    \raise0.25\ht2\box2%
-  }%
-}
-\def\approxprop{\mathpalette\app\relax}
-
-
-\input{Includes/preambule}
-
-\title{Композиции классификаторов}
-
-\begin{document}
-
 \section{Композиции классификаторов}
-%\section*{Основные понятия,методы стохастического ансмаблирования, бэггинг}
 
 В задачах классификации, регрессии и прогнозирования нередки ситуации,    когда ни один алгоритм не обеспечивает нужного качества исходной модели.  В таких случаях на помощь приходит метод композиции классификаторов, также известный как ансамблевые методы, который сочетает несколько моделей для улучшения точности и устойчивости предсказаний по сравнению с использованием одиночного классификатора. Идея применения метода зключается в том, что объединение различных алгоритмов, каждый из которых может иметь свои сильные и слабые стороны, позволяет компенсировать недостатки отдельных моделей и достигать лучших результатов.
 
@@ -176,5 +135,3 @@ $$b(x) = \frac{1}{T} \sum_{t=1}^T  b_t(x)$$
 Напишите декомпозицию алгоритма задачи регрессии в общем случае. Используется ли в данном случае решающее правило?
 \subsubsection*{Задача 3}
 Оцените уникальность подвыборки в методе bootstrap aggregating, для избыточного набора объектов исходной выборки, т.е. при $\ell \to \infty$.
-
-\end{document}
