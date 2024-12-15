@@ -421,13 +421,13 @@ O(N \cdot n \cdot k \cdot d)
 
 Тогда каждый объект может быть отнесен к одному из трёх типов:
 \begin{itemize}
-    \item \textit{корневой}: имеющий плотную окрестность,  {$\abs{U_\varepsilon (x)} \geq m$}, т.е. $\varepsilon$ содержит $\geq m$ объектов.
+    \item \textit{корневой}: имеющий плотную окрестность,  {$\lvert U_\varepsilon (x) \rvert \geq m$}, т.е. $\varepsilon$ содержит $\geq m$ объектов.
     \item \textit{граничный}: не корневой, но в окрестности корневого.
     \item \textit{шумовой (выброс)}: не корневой и не граничный.
 \end{itemize}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\linewidth]{chapters/clustering/png/An-Example-Illustrating-the-Density-Based-DBSCAN-Clustering-Method-Applied-to-SMLM-Data.png}
+    \includegraphics[width=0.9\linewidth]{chapters/clustering/images/An-Example-Illustrating-the-Density-Based-DBSCAN-Clustering-Method-Applied-to-SMLM-Data.png}
     \caption{An Example Illustrating the Density-Based DBSCAN Clustering Method Applied to SMLM Data}
     \label{fig:enter-label-2}
 \end{figure}
@@ -443,12 +443,12 @@ O(N \cdot n \cdot k \cdot d)
 \textbf{выход:} разбиение выборки на кластеры и шумовые выбросы;\\\hspace*{7mm}\hspace*{9mm}$U := X^l$ - не помеченные точки, $a := 0$\\
 \textbf{пока} в выборке есть непомеченные точки, $U \neq \emptyset$:\\
 \hspace*{7mm} взять случайную точку $x \in U$; \\
-\hspace*{7mm} \textbf{если} $\abs{U_\varepsilon (x)} < m$ \textbf{то} \\
+\hspace*{7mm} \textbf{если} $\lvert U_\varepsilon (x) \rvert < m$ \textbf{то} \\
 \hspace*{7mm}\hspace*{7mm} пометить $x$ как, возможно, шумовой;\\
 \hspace*{7mm}\textbf{иначе} \\
 \hspace*{7mm}\hspace*{7mm} создать новый кластер: $K:=U_\varepsilon (x); \; a:=a+1;$ \\
 \hspace*{7mm}\hspace*{7mm} \textbf{для всех} $x' \in K$, не помеченных или шумовых \\
-\hspace*{7mm}\hspace*{7mm}\hspace*{7mm} \textbf{если} $\abs{U_\varepsilon (x')} \geq m$,  \textbf{то} $K := K \cup U_\varepsilon (x')$; \\
+\hspace*{7mm}\hspace*{7mm}\hspace*{7mm} \textbf{если} $\lvert U_\varepsilon (x') \rvert \geq m$,  \textbf{то} $K := K \cup U_\varepsilon (x')$; \\
 \hspace*{7mm}\hspace*{7mm}\hspace*{7mm} \textbf{иначе} поментить $x'$ как граничный кластера $K$;\\
 \hspace*{7mm}\hspace*{7mm} $a_j := a$ для всех $x_i \in K$;\\
 \hspace*{7mm}\hspace*{7mm} $U := U \backslash K$;\\
@@ -469,7 +469,7 @@ O(N \cdot n \cdot k \cdot d)
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.6\linewidth]{chapters/clustering/png/hdbscan_dendrogramm.png}
+    \includegraphics[width=0.6\linewidth]{chapters/clustering/images/hdbscan_dendrogramm.png}
     \caption{К примечанию о HDBSCAN}
     \label{fig:hdbdendro}
 \end{figure}
@@ -577,7 +577,7 @@ P12& 2.83 & 3.16 & 4.00 & 5.10 & 4.47 & 5.39 & 6.00 & 1.41 & 2.00 & 2.00 & 1.41 
 К первому кластеру отнесем окрестность корневой точки 2, причем в ее окрестности находится еще одна корневая точка 11, так что отнесем и ее окрестность к первому кластеру. Ко второму кластеру отнесем корневую точку 5 и ее окрестность. Осталась лишь одна точка P9, которая не относится ни к какому кластеру и является шумовой.
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.7\linewidth]{chapters/clustering/png/task1dbs_plot.png}
+    \includegraphics[width=0.7\linewidth]{chapters/clustering/images/task1dbs_plot.png}
     \caption{Кластеризация в задаче 1}
     \label{fig:task1dbs}
 \end{figure}
@@ -598,7 +598,7 @@ DBSCAN: может идентифицировать и маркировать т
 \end{itemize}
 \end{minipage}% This must go next to `\end{minipage}`
 \begin{minipage}{.4\textwidth}
-      \includegraphics[width=0.95\linewidth]{chapters/clustering/png/task2dbs_plot.png}
+      \includegraphics[width=0.95\linewidth]{chapters/clustering/images/task2dbs_plot.png}
 \end{minipage}
 \begin{itemize}
 \item \textit{Плотность кластера}:
@@ -1086,13 +1086,13 @@ $K=l - t - 1$, где l - количество итераций
 Приведем пример (Рис. 1). Допустим известные обьекты в пространстве признаков имеют вид в виде двух бананов. И нам известна принадлежность только двух точек. В таком случае чистая задача кластеризации обучит классификатор только по двум точкам, который будет иметь сомнительное качество на всех остальных данных. При это частичное обучение могло бы учесть явную кластеризацию данных и дать значительно лучшую классификацию.\\
 
 \begin{center}
-\includegraphics[width=1.0\textwidth]{chapters/clustering/picture_1.png}
+\includegraphics[width=1.0\textwidth]{chapters/clustering/images/picture_1.png}
 \textbf{Рисунок 1.} (\textbf{A}) Пример частично размеченных данных. (\textbf{B}) Классификация обученная на размеченных данных не учитывает кластерную структуру неразмеченных. 
 \end{center}
 
 Однако частичное обучение не может сводиться только к кластеризации, представьте теперь, что мы знаем классы уже трех точек на выборке из двух бананов (Рис. 2). В таком случае кластеризация дала бы предсказание которое не может соотноситься с известными классами всех трех точек. Таким образом задача частичного обучения действительно находится посередине между классификацией и кластеризацией, но не является ни тем, ни другим. \\
 \begin{center}
-\includegraphics[width=1.0\textwidth]{chapters/clustering/picture_2.png}
+\includegraphics[width=1.0\textwidth]{chapters/clustering/images/picture_2.png}
 \textbf{Рисунок 2.} (\textbf{A}) Пример частично размеченных данных. (\textbf{B}) Кластеризация не учитывает классовую принадлежность размеченных данных. 
 \end{center}
 
@@ -1100,7 +1100,7 @@ $K=l - t - 1$, где l - количество итераций
 \subsection{Self-training}
 Каким же образом можно реализовать частичное обучение? Рассмотрим подход, который называется self-training (само-обучение). Вернемся к датасету с бананами в котором известны классы двух точек. Как было сказано ранее построение классификатора по двум точкам тут не поможет. Однако допустим, что мы все же построили классификатор по двум точкам, к примеру логистическую регрессию. Вспомним что многие методы классификации могут оценивать свою уверенность в предсказании. Тогда для некоторых точек с наибольшей уверенностью классификации (скажем 5\% самых уверенных) предсказание  классификации может оказаться вполне верным. Давайте же дополним обучающую выборку классификатора этими точками. На второй итерации нашего подхода мы обучим классификатор уже по дополненной обучающей выборке. Выполнив предсказание для остальных данных, выберем еще раз 5\% ранее неразмеченных точек с наибольшей уверенностью и пополним ими обучающую выборку. Будем повторять такие итерации пока не классифицируем все точки в нашем датасета. Как мы видим, результат такого подхода заметно лучше, чем у классификации по двум исходным точкам. 
 \begin{center}
-\includegraphics[width=1.0\textwidth]{chapters/clustering/picture_3.png}
+\includegraphics[width=1.0\textwidth]{chapters/clustering/images/picture_3.png}
 \textbf{Рисунок 3.} Пример работы итераций self-training. 
 \end{center}
 Оформим описанный процесс более математизировано. Пусть мы строим функцию $a: X \longrightarrow Y$. Пусть у нас есть метод обучения функции $\mu: Z \longrightarrow a$ который принимает на вход размеченную часть выборки $Z \subset X$. Допустим функция $a$ имеет вид
@@ -1143,13 +1143,13 @@ $K=l - t - 1$, где l - количество итераций
 \subsection*{Задача 1}
 Возможно ли при помощи self-training эффективно классифицировать точки частично размеченной выборки представленной ниже:
 \begin{center}
-\includegraphics[width=0.5\textwidth]{chapters/clustering/picture_5.png}
+\includegraphics[width=0.5\textwidth]{chapters/clustering/images/picture_5.png}
 \end{center}
 \textit{\textbf{Решение:} Конечно можно! Для этого нужно построить self-training на основе классификатора который может делать разделяющую поверхность в виде окружности, например классификаторы восстанавливающие плотность или логистическая регрессия с добавлением квадратичных признаков}
 \subsection*{Задача 2}
 Два подхода частичного обучения применяются для классификации обьектов частичной выборки представленной ниже.
 \begin{center}
-\includegraphics[width=0.5\textwidth]{chapters/clustering/picture_4.png}
+\includegraphics[width=0.5\textwidth]{chapters/clustering/images/picture_4.png}
 \end{center}
 Первый подход это self-training на основе логичтической регрессии, которая видит только первый признак. Второй подход это co-training на основе двух логистических регрессий, таких что первая видит первый признак, а вторая второй. Какой алгоритм приведет к лучшей классификации точек и почему?\\
 
@@ -1157,7 +1157,7 @@ $K=l - t - 1$, где l - количество итераций
 \subsection*{Задача 3}
 Алгоритм co-training построенный на основе трех классификаторов классифицирует точки представленной ниже выборки. На последней итерации работы алгоритма осталась лишь одна неклассифицированная точка. На этот момент классификаторы имеют разделяющие линии представленные на картинке. К какому кластеру будет отнесена оставшаяся точка?
 \begin{center}
-\includegraphics[width=0.5\textwidth]{chapters/clustering/picture_6.png}
+\includegraphics[width=0.5\textwidth]{chapters/clustering/images/picture_6.png}
 \end{center}
 \textit{\textbf{Решение:} Судя по разделяющим линиям два классификатора проголосую за красный кластер, и только один за синий, в итоге точка будет отнесена к красному кластеру.}
 
