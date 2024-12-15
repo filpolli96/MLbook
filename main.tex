@@ -3,6 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -23,6 +25,7 @@
 \usepackage{systeme}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{tikz}
 \usepackage{csquotes}
 \usepackage{mathrsfs}
 \usepackage{enumerate}
@@ -30,6 +33,8 @@
 \usepackage{mathrsfs}
 
 \pgfplotsset{compat=1.18}
+\usetikzlibrary{intersections}
+\usepgfplotslibrary{fillbetween}
 
 \theoremstyle{definition}
 \newtheorem*{definition}{Определение}
@@ -41,6 +46,10 @@
 \newtheorem*{remark}{Замечание}
 \theoremstyle{remark}
 \newtheorem*{solution}{Решение}
+\theoremstyle{definition}
+\newtheorem*{theorem}{Теорема}
+\theoremstyle{definition}
+\newtheorem*{lemma}{Лемма}
 
 \usepackage[toc,page]{appendix}
 \usepackage{hyperref}
@@ -51,6 +60,11 @@
 \geometry{top=2.0cm}
 \geometry{bottom=3.0cm}
 \renewcommand{\baselinestretch}{1.0}
+
+\usepackage{algorithm2e}
+\RestyleAlgo{ruled}
+\SetAlgoVlined
+\renewcommand{\thealgocf}{Add}
 
 %https://tex.stackexchange.com/questions/163451/total-number-of-citations
 \usepackage{totcount}
