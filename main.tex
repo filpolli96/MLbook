@@ -3,6 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -23,12 +25,14 @@
 \usepackage{systeme}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{tikz}
 \usepackage{csquotes}
 \usepackage{mathrsfs}
 \usepackage{enumerate}
 \usepackage{algpseudocode}
 
 \pgfplotsset{compat=1.18}
+
 
 \theoremstyle{definition}
 \newtheorem*{definition}{Определение}
@@ -50,6 +54,11 @@
 \geometry{top=2.0cm}
 \geometry{bottom=3.0cm}
 \renewcommand{\baselinestretch}{1.0}
+
+\usepackage{algorithm2e}
+\RestyleAlgo{ruled}
+\SetAlgoVlined
+\renewcommand{\thealgocf}{Add}
 
 %https://tex.stackexchange.com/questions/163451/total-number-of-citations
 \usepackage{totcount}
@@ -165,6 +174,10 @@ sorting=ynt
     \input{chapters/mixture/main}
 
     \clearpage
+    \chapter{Ансамблирования классификаторов}
+    \input{chapters/ensembles/main}
+
+    \clearpage
     \chapter{Методы бустинга}
     \input{chapters/boosting/main}
 
@@ -181,8 +194,13 @@ sorting=ynt
     \input{chapters/unlabeled/main}
 
     \clearpage
+    \chapter{Квазилинейные классификаторы}
+    \input{chapters/semilinclass/main}
+
+    \clearpage
     \chapter{Детекция аномалий}
     \input{chapters/anomalies/main}
+
 
     % Bibliography
     \clearpage
