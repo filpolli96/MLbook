@@ -342,7 +342,8 @@ Ordered boosting решает проблему смещенности, прие�
     \item \(g_{ti}^r = -\mathcal{L}'\left(a_{t-1}^{rj}(x_i), y_i\right)\) — антиградиент в точке \((x_i, y_i)\) для ансамбля \(a_{t-1}^{rj}\), который по ней не обучался, \(j = \lfloor \log_2(i - 1) \rfloor\).
 \end{itemize}
 
-\includegraphics[width=15cm]{images/ordered_boost.png}
+
+\includegraphics[width=15cm]{chapters/boosting/images/ordered_boost.png}
 
 \subsection*{Модифицированный алгоритм градиентного бустинга в CatBoost}
 
@@ -351,7 +352,7 @@ Ordered boosting решает проблему смещенности, прие�
 \item Сгенерировать случайные перестановки \(\sigma_0, \sigma_1, \ldots, \sigma_s\);
 
 \item \textbf{для всех} \(t = 1, \ldots, T\):
-\begin{enumerate}[label*=\arabic*.]
+\begin{enumerate}
     \item выбрать перестановку \(\sigma_r\) случайно из \(\sigma_1, \ldots, \sigma_s\);
     \begin{flalign*}
     & g_{ti}^r := -\mathcal{L}'\left(a_{t-1}^{rj}(x_i), y_i\right) \quad \text{— несмещённый антиградиент;} &
@@ -404,9 +405,9 @@ $$
 a(x) = B(f_1(x), \ldots, f_H(x)).
 $$
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=15cm]{images/Tree.png}
+    \includegraphics[width=15cm]{chapters/boosting/images/Tree.png}
     \caption{Пример сплита в слоях дерева в CatBoost}
 \end{figure}
 
@@ -500,7 +501,7 @@ $$
 \begin{itemize}
     \item Перестановка объектов: $x_1, x_2, x_3, x_4, x_5, x_6$
     \item Значения признака  $f(x_i)$ и целевой переменной $y_i$
-    \begin{table}[h]
+    \begin{table}[ht]
     \centering
     \begin{tabular}{c|c|c}
     Объект \( x_i \) & \( f(x_i) \) & \( y_i \) \\
