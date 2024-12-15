@@ -882,3 +882,87 @@ $d_1, d_2, ..., d_n: d_1 \ge 0, d_2 \ge 0, ..., d_n \ge 0$ и $ d_1 + d_2 + ... 
   \caption{SVM в виде двухслойной нейросети}
   \label{fig:mpr}
 \end{figure}
+
+\section{Одноклассовый SVM}
+
+\subsection{Формулировка задачи}
+Пусть задан набор данных $\{x_i\}_{i=1}^n$, $x_i \in \mathbb{R}^d$. Одноклассовый SVM определяется решением следующей оптимизационной задачи:
+\[
+\min_{\mathbf{w},\rho,\{\xi_i\}} \frac{1}{2}\|\mathbf{w}\|^2 - \rho + \frac{1}{\nu n}\sum_{i=1}^n \xi_i
+\]
+при ограничениях
+\[
+(\mathbf{w}\cdot \phi(x_i)) \ge \rho - \xi_i, \quad \xi_i \ge 0, \quad i=1,\dots,n,
+\]
+где $\phi(\cdot)$ — отображение в спрямляющее пространство, $\nu \in (0,1]$ — заданный параметр.
+
+\subsection{Двойственная форма}
+Двойственная задача может быть записана следующим образом:
+\[
+\max_{\{\alpha_i\}} \left( \rho = \min_i \left( \mathbf{w} \cdot \phi(x_i) \right) \right), 
+\]
+где
+\[
+\mathbf{w} = \sum_{i=1}^n \alpha_i \phi(x_i), \quad \sum_{i=1}^n \alpha_i = 1, \quad 0 \le \alpha_i \le \frac{1}{\nu n}.
+\]
+
+Подстановкой ядровой функции $K(x_i,x_j) = \phi(x_i) \cdot \phi(x_j)$ получаем зависимость решения от скалярных произведений в спрямляющем пространстве:
+\[
+\mathbf{w} \cdot \phi(x) = \sum_{i=1}^n \alpha_i K(x_i,x).
+\]
+
+\subsection{Принятие решения}
+Для новой точки $x$ проверяется знак:
+\[
+f(x) = \mathbf{w}\cdot\phi(x) - \rho.
+\]
+Если $f(x)<0$, точка считается не принадлежащей множеству основных данных.
+
+\subsection{Задача 1}
+Дан набор данных $\{x_i\}_{i=1}^n$, $x_i \in \mathbb{R}^d$. Одноклассовый SVM решает задачу:
+\[
+\min_{\mathbf{w},\rho,\{\xi_i\}} \frac{1}{2}\|\mathbf{w}\|^2 - \rho + \frac{1}{\nu n}\sum_{i=1}^n \xi_i
+\]
+при ограничениях
+\[
+(\mathbf{w}\cdot\phi(x_i))\ge\rho-\xi_i, \quad \xi_i\ge0.
+\]
+
+\textbf{Требуется:} Найти двойственную постановку задачи.
+
+\subsection{Решение}
+Двойственная задача:
+\[
+\max_{\{\alpha_i\}} \rho = \min_i \sum_{j=1}^n \alpha_j K(x_j,x_i)
+\]
+при условиях
+\[
+\sum_{i=1}^n \alpha_i = 1,\quad 0 \le \alpha_i \le \frac{1}{\nu n}.
+\]
+Здесь $\mathbf{w} = \sum_{i=1}^n \alpha_i \phi(x_i)$ и $K(x_i,x_j)=\phi(x_i)\cdot \phi(x_j)$.
+
+\hrulefill
+
+\subsection{Задача 2}
+При заданном решении одноклассового SVM для новой точки $x$ вычисляется:
+\[
+f(x)=\mathbf{w}\cdot\phi(x)-\rho.
+\]
+\textbf{Требуется:} Выразить $f(x)$ через $\{\alpha_i\}$ и $K(x_i,x)$.
+
+\subsection{Решение}
+\[
+f(x) = \left(\sum_{i=1}^n \alpha_i K(x_i,x)\right) - \rho.
+\]
+
+\hrulefill
+
+\subsection{Задача 3}
+Докажите, что для оптимального решения одноклассового SVM количество ненулевых коэффициентов $\alpha_i$ не меньше $\lceil\nu n\rceil$.
+
+\subsection{Решение}
+Из условий задачи:
+\[
+\sum_{i=1}^n \alpha_i = 1,\quad 0 \le \alpha_i \le \frac{1}{\nu n}.
+\]
+Предположим, что ненулевых $\alpha_i$ меньше, чем $\lceil\nu n\rceil$. Тогда даже при максимальном значении каждого ненулевого $\alpha_i = \frac{1}{\nu n}$ сумма $\sum_{i=1}^n \alpha_i$ не могла бы достичь 1 (поскольку $\lceil \nu n \rceil \cdot \frac{1}{\nu n}\ge1$). Следовательно, для выполнения условия суммы равной единице необходимо не менее $\lceil\nu n\rceil$ ненулевых коэффициентов.
