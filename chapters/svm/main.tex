@@ -648,6 +648,88 @@ w_j = u_j - v_j \quad |w_j| = u_j + v_j.
 
 Это условие на $\lambda,$ при котором задача имеет решение $w_0 = 0,$ поэтому нам подходит $\lambda \in [0;$ $|xb|)$.
 
+
+\section{Ядерные функции машины опорных векторов}
+При наличии нелинейной связи между признаками и откликом качество линейных классификаторов, как показано на рисунке ниже,
+часто может оказаться неудовлетворительным.
+\begin{align*}
+    \centering
+    \includegraphics[width=0.6 \linewidth]{chapters/svm/images/svm_kernels.png}
+    \label{fig:image}
+\end{align*}
+Для учета нелинейности обычно расширяют пространство переменных,
+включая различные функциональные преобразования исходных предикторов (полиномы, экспоненты и проч.).
+Машину опорных векторов SVM (Support Vector Machine) можно рассматривать как нелинейное обобщение линейного классификатора, полученного при
+решении двойственной задачи (прямая задача является задачей бинарной классификации):
+$$
+\left\{\begin{array}{l}
+w=\sum_{i=1}^{\ell} \lambda_i y_i x_i ; \\
+w_0=\left\langle w, x_i\right\rangle-y_i, \quad \text { для любого } i: \lambda_i>0, M_i=1 .
+\end{array}\right.
+$$
+
+Линейный классификатор с признаками $f_i(x)=\left\langle x, x_i\right\rangle$ :
+$$
+a(x)=\operatorname{sign}\left(\sum_{i=1}^{\ell} \lambda_i y_i\left\langle x, x_i\right\rangle-w_0\right) .
+$$
+
+Введя здесь новую нелинейную функцию $K\left(x, x^{\prime}\right)$, вместо $\left\langle x, x^{\prime}\right\rangle$,
+можно строить модели с разделяющих поверхностями самой различной формы.
+
+Дадим формальное определение:\newline
+\textbf{Oпределение}:\newline
+Функция $K: X \times X \rightarrow \mathbb{R}-$ ядро, если $K\left(x, x^{\prime}\right)=\left\langle\psi(x), \psi\left(x^{\prime}\right)\right\rangle$
+при некотором $\psi: X \rightarrow H$, где $H-$ гильбертово пространство. \newline
+В качестве таких функций чаще всего используют следующие:
+\begin{itemize}
+\item линейное ядро: $K(x, x^{\prime})=\langle x, x^{\prime} \rangle$, что соответствует классификатору на опорных векторах в исходном пространстве (см. рис. 6.3);
+\item полиномиальное ядро со степенью $p: K(x, x^{\prime})=(1+\langle x, x^{\prime} \rangle)^p$;
+\item гауссово ядро с радиальной базовой функцией (RBF): $K(x, x^{\prime})=\exp(\gamma\langle x - x^{\prime} \rangle^2)$;
+\item сигмодиное ядро: $K(x, x^{\prime})=\tanh(\gamma\langle x, x^{\prime}\rangle+\beta_0)$.
+\end{itemize}
+
+Для того, чтобы определять является ли функция ядром, существует\newline
+\textbf{Теорема Мерсера}:\newline
+Функция двух переменных $K\left(x, x^{\prime}\right)$ является ядром тогда и только тогда, когда она
+\begin{itemize}
+\item симметрична, то есть $K\left(x, x^{\prime}\right)=K\left(x^{\prime}, x\right)$;
+\item неотрицательно определена, то есть $\int_X \int_X K\left(x, x^{\prime}\right) g(x) g\left(x^{\prime}\right) d x d x^{\prime} \geq 0$ для любой функции $g: X \rightarrow \mathbb{R}$;
+\end{itemize}
+
+Нужно отметить, что на практике проверка неотрицательной определенности функции $K\left(x, x^{\prime}\right)$ часто является нелегкой задачей.
+Вместо этого обычно используют какие-то конструктивные методы синтеза ядер, например достаточно очевидное утверждение: $K\left(x, x^{\prime}\right)=\alpha_1 K_1\left(x, x^{\prime}\right)+\alpha_2 K_2\left(x, x^{\prime}\right)$ при $\alpha_1, \alpha_2>0-$ ядро.
+
+\subsection{Задача 1}
+Найти пространство $H$ и преобразование $\psi: X \rightarrow H$, при которых
+$K(x, x^{\prime}) = \langle \psi(x),\psi(x^{\prime}) \rangle $, где $X = \mathbb{R}^n,~
+K(x, x^{\prime}) = \langle x, x^{\prime} \rangle^2,~ x = (x_1, x_2, \cdots x_n),~ x^{\prime} = (x_1^{\prime}, x_2^{\prime}, \cdots x_n^{\prime})$
+\subsection{Решение}
+\begin{align*}
+K(x, x^{\prime}) = \langle x, x^{\prime} \rangle^2 = \langle (x_1, x_2, \cdots x_n), (x_1^{\prime}, x_2^{\prime}, \cdots x_n^{\prime}) \rangle^2 = (x_1x_1^{\prime} + \cdots + x_nx_n^{\prime})^2  \\
+  = x_1^2x_1^{\prime}^2 + \cdots + \cdots x_n^2x_n^{\prime}^2 + 2x_1x_1^{\prime}x_2x_2^{\prime} + \cdots 2x_1x_1^{\prime}x_{n}x_n^{\prime} + \cdots + 2x_{n-1}x_{n-1}^{\prime}x_{n}x_{n}^{\prime}  = \\
+  = \langle(x_1^2, x_2^2, \cdots x_n^2, \sqrt{2}x_1x_2, \cdots \sqrt{2}x_{n-1}x_n),(x_1^{\prime}^2, x_2^{\prime}^2, \cdots x_n^{\prime}^2, \sqrt{2}x_1^{\prime}x_2^{\prime},\cdots \sqrt{2}x_{n-1}^{\prime}x_{n}^{\prime})\rangle
+\end{align*}
+Подсчетом слагаемых можно убедиться, что $ dimH = \frac{1}{2}n(n-1) $, а $\psi:(x_1, x_2, \cdots x_n) \mapsto(x_1^2, x_2^2, \cdots x_n^2, \sqrt{2}x_1x_2, \cdots \sqrt{2}x_{n-1}x_n)$
+
+\subsection{Задача 2}
+Доказать, что $\forall \psi: X \rightarrow \mathbb{R}$ произведение $K\left(x, x^{\prime}\right)=\psi(x) \psi\left(x^{\prime}\right)-$ ядро.
+\subsection{Решение}
+
+Действительно, произведение $\psi(x) \psi(x^{\prime})$ есть скалярное произведение в одномерном пространстве $\mathbb{R}$, а в силу свойств скалярного произведения
+(положительная определенность и симметричность) по теореме Мерсера получаем, что $K(x, x^{\prime})$ ядро.
+
+\subsection{Задача 3}
+Доказать, что $K(x, x^{\prime})=\exp(\langle x - x^{\prime} \rangle^2)$ ядро (гауссово ядро с радиальной базовой функцией).
+\subsection{Решение}
+
+Для доказательство нужно воспользоваться утверждением: композиция произвольного ядра $K_0$ и произвольной функции
+$f: \mathbb{R} \rightarrow \mathbb{R}$, представимой в виде сходящегося степенного ряда с неотрицательными коэффициентами
+$K\left(x, x^{\prime}\right)=f\left(K_0\left(x, x^{\prime}\right)\right)$, является ядром.
+$K_0(x, x^{\prime}) = \langle x - x^{\prime} \rangle^2$ является ядром по свойствам скалярного произведения. Как известно,
+экспонента представима в виде степенного ряда с положительными коэффициентами, поэтому выполнены все условия утверждения, что
+доказывает, что $K(x, x^{\prime})$ ядро.
+
+
 \section{Relevance Vector Machine(RVM)}
 
 \subsection{Идея метода релевантных векторов}
