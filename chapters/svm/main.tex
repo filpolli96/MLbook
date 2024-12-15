@@ -327,8 +327,8 @@
 \par Выбор ядра играет ключевую роль в качестве работы модели SVM-регрессии. Различные ядра по-разному преобразуют входные данные, что может существенно повлиять на точность предсказаний и обобщающую способность модели.
 \par Выбор ядра зависит от особенностей данных, структуры зависимости и доступных вычислительных ресурсов. Экспериментальная проверка нескольких типов ядер и последующая оценка метрик качества модели — это ключевой этап в процессе выбора оптимального ядра.
 \par На рисунке ниже представлена SVM-регрессия с тремя типами ядер: RBF, линейным и полиномиальным. 
-\begin{figure}[h!]
-    \includegraphics[width = 0.8\textwidth]{MLbook/chapters/svm/images/svm_regression_cmp_models.png}
+\begin{figure}[ht!]
+    \includegraphics[width = 0.8\textwidth]{chapters/svm/images/svm_regression_cmp_models.png}
     \centering
     \caption{Сравнение SVM-регрессия с разными типами ядер}
     \label{fig:kernel_comparison}
@@ -479,10 +479,9 @@
     \item по мере увеличения \(\mu\) признак может быть отброшен, хотя $y$ существенно зависит от него (даже когда ещё не все шумовые признаки отброшены)
 \end{itemize}
 
-\newline
-\newline
+\vspace{10pt}
 
-\section{Сравнение \(L_2\) и \(L_1\) регуляризации}
+\section{Сравнение L2 и L1 регуляризации}
 
 Зависимость весов \(w_j\) от коэффициента \(\frac{1}{\mu}\):
 
@@ -490,21 +489,21 @@
     \item \(L_1\) регуляризатор: \(\mu \sum_{j} |w_j|\)
 \end{itemize}
 
-\begin{align*}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.6 \linewidth]{chapters/svm/images/L_1.png}
-    \label{fig:image}    
-\end{align*}
+    \label{fig:image_1}    
+\end{figure}
 
 \begin{itemize}
     \item \(L_2\) регуляризатор: \(\mu \sum_{j} w_j^2\)
 \end{itemize}
 
-\begin{align*}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.6 \linewidth]{chapters/svm/images/L_2.png}
-    \label{fig:image}    
-\end{align*}
+    \label{fig:image_2}    
+\end{figure}
 
 \section{Doubly Regularized SVM (Elastic Net SVM)}
 
@@ -528,7 +527,7 @@
 
 Elastic Net менее жёстко отбирает признаки.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth]{chapters/svm/images/Elastic_Net.png}
     \caption{Зависимости весов \(w_j\) от коэффициента \(\log \frac{1}{\mu}\)}

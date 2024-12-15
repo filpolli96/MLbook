@@ -20,7 +20,7 @@ $$\frac{1}{\ell}\sum\limits_{i=1}^\ell\left(a - y_i\right)^2 \longrightarrow \mi
 
 А в случае использования метода наименьших модулей задача будет выглядеть так:
 $$\frac{1}{\ell}\sum\limits_{i=1}^\ell\left|a - y_i\right| \longrightarrow \min\limits_{a}.$$
-Здесь опять же можно посчитать ответ аналитически, оптимальным $a$ будет $a = \median\left\{ y_1, \dotsc, y_\ell \right\} = y_{(\ell / 2)}$ (серединный член вариационного ряда). Эта оценка хороша тем, что устойчива к выбросам, хорошо работает для распределений ошибок с тяжелыми <<хвостами>>.
+Здесь опять же можно посчитать ответ аналитически, оптимальным $a$ будет $a = \text{median}\left\{ y_1, \dotsc, y_\ell \right\} = y_{(\ell / 2)}$ (серединный член вариационного ряда). Эта оценка хороша тем, что устойчива к выбросам, хорошо работает для распределений ошибок с тяжелыми <<хвостами>>.
 
 Таким образом, использование метода наименьших модулей в некоторых ситуациях помогает бороться с выбросами.
 
@@ -122,9 +122,9 @@ L(\varepsilon) = \max(0, | y - f(x) | - \varepsilon).
 \begin{align*}
     L(\varepsilon, \alpha) = 
         \begin{cases}
-            \case 0, & | y - f(x) | \leq \varepsilon \\
-            \case \alpha(y - f(x)) - \varepsilon, & y - f(x) > \varepsilon \\
-            \case \frac{(y - f(x))}{\alpha} - \varepsilon, & f(x) - y > \varepsilon
+            0, & | y - f(x) | \leq \varepsilon \\
+            \alpha(y - f(x)) - \varepsilon, & y - f(x) > \varepsilon \\
+            \frac{(y - f(x))}{\alpha} - \varepsilon, & f(x) - y > \varepsilon
         \end{cases}
 \end{align*}
 где \(\alpha > 1\) задаёт степень асимметрии штрафования. Такая функция потерь позволит модели сильнее реагировать на недостаточную оценку и слабее —-- на переоценку.
@@ -146,9 +146,9 @@ L(\varepsilon) = \max(0, | y - f(x) | - \varepsilon).
 \begin{align*}
     L(\varepsilon) = 
     \begin{cases}
-            \case 0, & | y_i - f(x_i) | \leq \varepsilon \\
-            \case 2(y_i - f(x_i) - \varepsilon), & y_i - f(x_i) > \varepsilon \\
-            \case f(x_i) - y_i- \varepsilon, & f(x_i) - y_i > \varepsilon
+            0, & | y_i - f(x_i) | \leq \varepsilon \\
+            2(y_i - f(x_i) - \varepsilon), & y_i - f(x_i) > \varepsilon \\
+            f(x_i) - y_i- \varepsilon, & f(x_i) - y_i > \varepsilon
         \end{cases}
 \end{align*}
 
