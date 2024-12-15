@@ -1,4 +1,4 @@
-\documentclass{mybook}
+\documentclass{disser}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
@@ -9,16 +9,26 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{color}
 \usepackage{bm}
 \usepackage{tabularx}
 \usepackage{url}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{tcolorbox}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{multirow}
 \usepackage{lastpage}
 \usepackage{systeme}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{csquotes}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{algpseudocode}
+
+\pgfplotsset{compat=1.18}
 
 \theoremstyle{definition}
 \newtheorem*{definition}{Определение}
@@ -86,6 +96,7 @@ sorting=ynt
 \addbibresource{chapters/bayesian/main.bib}
 \addbibresource{chapters/clustering/main.bib}
 \addbibresource{chapters/unlabeled/main.bib}
+\addbibresource{chapters/anomalies/main.bib}
 
 \begin{document}
 % Титульный лист
@@ -173,9 +184,12 @@ sorting=ynt
     \chapter{Квазилинейные классификаторы}
     \input{chapters/semilinclass/main}
 
+    \clearpage
+    \chapter{Детекция аномалий}
+    \input{chapters/anomalies/main}
+
 
     % Bibliography
     \clearpage
     \printbibliography
 \end{document}
-
